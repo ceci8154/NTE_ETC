@@ -1,0 +1,2467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>NTE_ETC API documentation</title>
+<meta name="description" content="Original code was written by Bjarne Thomsen …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>NTE_ETC</code></h1>
+</header>
+<section id="section-intro">
+<p>Original code was written by Bjarne Thomsen.</p>
+<p>Translated and additional code written by Cecilie Valet Henneberg and Mads Nymann-Lynggaard</p>
+<p>Comments also written by Bjarne Thomsen.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Original code was written by Bjarne Thomsen.
+
+Translated and additional code written by Cecilie Valet Henneberg and Mads Nymann-Lynggaard
+
+Comments also written by Bjarne Thomsen.
+&#34;&#34;&#34;
+
+
+
+# This is a translation of code originally by Bjarne Thomsen
+
+import configparser
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.interpolate import UnivariateSpline, interp1d
+from scipy.special import erf
+
+
+def gauss (x):
+    &#34;&#34;&#34;
+    Caclulate the normalized Gaussian function for the array x.
+
+    :param x: array of values. In this code x is used as (arr - arr0)/sigma)
+    :return: The values of the Gaussian.
+    &#34;&#34;&#34;
+    return np.exp(-0.5 * x**2)/np.sqrt(2.0 * np.pi)
+
+
+def hgauss (x,s):
+    &#34;&#34;&#34;
+    Generates a semi-realistic object profile along the slit.
+    hgauss(x, s) = exp(-(sqrt(1 + (x*s)^2) - 1)/x^2)
+                 = exp(-2.0*(sinh(0.5*asinh(x*s))/x)^2)
+    This is a simple way to obtain a profile resembling a disk galaxy
+    convolved by a Gaussian seeing.
+
+    :param x: Exponential scale divided by Gaussian sigma.
+    :param s: Distance from center of slit in sigma units.
+    :return: Signal profile along the slit.
+    &#34;&#34;&#34;
+    return np.exp(-2.0*(np.sinh(0.5 * asinh(x*s))/x)**2)
+
+
+def asinh (x):
+    &#34;&#34;&#34;
+    Calculates the inverse of the hyperbolic sine function.
+    asinh(x) = sign(x)*asinh(abs(x))
+    asinh(x) = alog(sqrt(1 + x^2) + x)
+
+    :param x: Real scalar or array.
+    :return: Inverse of the hyperbolic sine function.
+    &#34;&#34;&#34;
+    # use that asinh(x) = sign(x)*asinh(abs(x))
+    z = abs(x)
+    # calculate asinh(x) for positive arguments, only
+    i = x &gt;= 0
+    x[i] = np.log(np.sqrt(z[i]**2 + 1) + z[i])
+    j = x &lt; 0
+    x[j] = -np.log(np.sqrt(z[j]**2 + 1) + z[j])
+    return x
+
+
+def planck(x, T):
+    &#34;&#34;&#34;
+    Calculates the specific photon flux from
+    a black body of themperature T kelvin.
+    It is given in ph/s/m^2/um/arcsec^2
+
+    :param x: The given wavelengths in um
+    :param T: Temperature in kelvin
+    :return: Specific photon flux at x
+    &#34;&#34;&#34;
+    return 1.40929e16/(np.exp(1.43879e4/(T*x)) - 1)/x**4
+
+
+def objem_at_all (func, abmag, maglam, param, sigma, lambd):
+    &#34;&#34;&#34;
+    Calculates the specific photon flux from a selected
+    spectral law or template at a given wavelength with
+    given spectral resolution, as specified by a 
+    Gaussian sigma.
+
+    :param func: String. The spectral law or template to use.
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param param: Spectral index, temperature or bandwidth.
+    :param sigma: The sky spectrum, as transmitted through
+                  the atmosphere, is convolved with a 
+                  Gaussian having the dispersion sigma[i]
+                  at lambda[i]. The sigmas are given in um.
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    # convolve the object spectrum with a Gaussian
+    y = lambd.copy()
+    # number of points on each side of x0
+    N = 30
+    tmp_arange = np.arange(2*N + 1) - N
+    for i in range(len(lambd)):
+        # wavelength of sample point No. i
+        x0 = lambd[i]
+        # Gaussian sigma of sample point No. i
+        s0 = sigma[i]
+        # step size
+        step = 0.4 * s0
+        x = (tmp_arange)*step + x0
+        # photon fluxes of the transmitted objec spectrum at the discrete wavelengths
+        flux = step * atmos_trans(x)**am * call_func(func, abmag, maglam, param, x)
+        # calculate the Gaussian weighted sum of the transmitted object spectrum
+        y[i] = sum(flux * gauss((x - x0)/s0))/s0
+    return y
+
+
+def atmos_trans (lambd):
+    &#34;&#34;&#34;
+    Calculates the atmospheric transmission at any
+    wavelength in the full range.
+
+    :param lambd: Wavelength in um.
+    :return: Atmospheric transmission.
+    &#34;&#34;&#34;
+    # Split between a UV-Visual part and a NIR part of the spectrum
+    y = lambd.copy()
+    k = lambd &lt; lambda_split_uvb_vis
+    y[k] = qes_and_intps(&#39;luvb&#39;, lambd[k], &#39;trans_at_luvb&#39;)
+    k =  (lambd &lt; lambda_split_vis_ir) &amp; (lambd &gt;= lambda_split_uvb_vis)
+    y[k] = qes_and_intps(&#39;uvis&#39;, lambd[k], &#39;trans_at_uvis&#39;)
+    k = lambd &gt;= lambda_split_vis_ir
+    y[k] = qes_and_intps(&#39;nir&#39;, lambd[k], &#39;trans_at_nir&#39;)
+    return y**am
+
+
+def powerlaw (abmag, maglam, alpha, lambd):
+    &#34;&#34;&#34;
+    Calculates a power-law continuum with a spectral
+    index, alpha and an AB magnitude, abmag, at maglam.
+    The photon flux density is given in photons/s/m^2/um.
+
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param alpha: Spectral index (F_nu ~ 1/nu^alpha).
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    y = (lambd/maglam)**alpha * 10**(0.4*(mag_zero_point - abmag))/lambd
+    return y
+
+
+def plancklaw (abmag, maglam, T, lambd):
+    &#34;&#34;&#34;
+    Calculates a Planck-law continuum with temperature T,
+    and an AB magnitude, abmag, at maglam.
+    The photon flux density is given in ph/s/m^2/um.
+
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param T: Temperature in kelvin
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    c2 = 14387.9
+    a = 0.5*c2/T
+    y = np.exp(a/maglam - a/lambd)*np.sinh(a/maglam)/np.sinh(a/lambd)* \
+        (maglam/lambd)**4 * 10**(0.4*(mag_zero_point - abmag))/maglam
+    return y
+
+
+def template (lambd):
+    &#34;&#34;&#34;
+    Calculates the photon flux at lamda from the 
+    interpolation done in read_template().
+    All wavelength are given in um, and the photon flux
+    density is given in photons/s/m^2/um.
+
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    x_new = lambd
+    f = y_spl_template(x_new)
+    return f
+
+
+def call_func (func, abmag, maglam, param, x):
+    &#34;&#34;&#34;
+    Decides which function to use based on func string.
+
+    :param func: String with the name of the function to use.
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param param: Spectral index, temperature or bandwidth.
+    :param x: The wavelengths given in um.
+    :return: Specific photon flux at x given in
+             units photons/s/m^2/um.
+             Based on specified function.
+    &#34;&#34;&#34;
+    if func == &#39;powerlaw&#39;:
+        f = powerlaw(abmag, maglam, param, x)
+    elif func == &#39;plancklaw&#39;:
+        f = plancklaw(abmag, maglam, param, x)
+    elif func == &#39;template&#39;:
+        f = template(x)
+    return f
+
+
+def read_template (abmag, maglam, bandwidth, name):
+    &#34;&#34;&#34;
+    Reads data from the template spectrum file.
+    The file must contain wavelengths in å.
+    Calculates a template spectrum with an AB magnitude
+    abmag at central wavelength maglam through a photometric
+    system with a FWHM bandpass of bandwidth.
+    Makes a spline interpolation of the template spectrum,
+    with wavelengths in um, and the photon flux
+    density in photons/s/m^2/um.
+
+    :param abmag: AB magnitude in specified photometric system.
+    :param maglam: Central wavelength (in um) of the bandpass.
+    :param bandwidth: FWHM (in um) of the photometrix system.
+    :param name: Name of the template spectrum file.
+    No output.
+    It puts the data in the global variables:
+    - template_x - wavelengths in um
+    - template_y - flux per wavelength in arbitrary units
+    - y_spl_template - spline interpolation of template_y
+    &#34;&#34;&#34;
+    global template_x, template_y, y_spl_template
+    template_data = np.loadtxt(&#39;data/&#39;+str(name))
+    # Wavelength in um
+    template_x = template_data[:,0] / 10000
+    # Spectral flux in arbitrary units per wavelengthinterval
+    template_y = template_data[:,1]
+    # Flux density must be non negative
+    template_y = template_y.clip(min=1.0E-30)
+    #The sampling must be sorted according to increasing wavelength
+    k = np.argsort(template_x)
+    template_x = template_x[k]
+    template_y = template_y[k]
+
+    n = len(template_x)
+    x = template_x
+    y = template_y
+    # the bandpass must not be wider than half the spectral range
+    fwhm = min(bandwidth, (0.5*(x[-1] - x[0])))
+    # the central wavelength must not be too close to the endpoints
+    xc = min(max(maglam, (x[0] + fwhm)), (x[-1] - fwhm))
+    # select all spectral samples within [xc - fwhm, xc + fwhm]
+    k = (x &gt;= (xc - fwhm)) &amp; (x &lt;= (xc + fwhm))
+    # what should we do if there are no samples in this interval?
+    if sum(k) == 0:
+        fwhm = 0.5*(x[-1] - x[0])
+        xc = 0.5*(x[-1] + x[0])
+        k = np.arange(n)
+    # calculate the bandpass profile
+    P = np.exp(-np.log(2.0) * (2.0 * (x[k] - xc)/fwhm)**4)
+    # calculate the scaling factor
+    S = 10.0**(0.4 * (mag_zero_point - abmag)) * sum(P/x[k])/sum(P * x[k] * y[k])
+    # calculate the photon flux (photons/s/m^2/um) at the sample points
+    y = S * x * y
+    # we should not extrapolate outside endpoints, instead we use the values at the endpoints.
+    y_spl_template = UnivariateSpline(x, y, s=0, k=2)
+
+
+def read_vis_sky ():
+    &#34;&#34;&#34;
+    This function imports the needed data of the night-sky
+    in the visual part of the spectrum.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - vissky_x - wavelengths in um
+    - vissky_y - specific photon flux in photons/s/m^2/um
+    &#34;&#34;&#34;
+    global vissky_x, vissky_y
+    sky_data = np.loadtxt(sky_filename)
+    # extract wavelengths into um
+    vissky_x = sky_data[:,0] /1000.0
+    # and photon fluxes in photons/m^2/s/um/arcsec^2
+    vissky_y = sky_data[:,1]
+    # the flux must be non negative
+    vissky_y = vissky_y.clip(min=0.0)
+
+
+def read_nir_abs ():
+    &#34;&#34;&#34;
+    Reads data on atmospheric NIR absorption.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - nir_x - wavelengths in um
+    - nir_y - transmission
+    &#34;&#34;&#34;
+    global nir_x, nir_y
+    abs_data = np.loadtxt(&#39;data/skycalc_abs.dat&#39;)
+    # extract wavelengths (in um) and transmissions.
+    nir_x = abs_data[:,0] /1000.0 # in um
+    nir_y = abs_data[:,1]
+    # the transmission must be in the range [0,1].
+    nir_y = nir_y.clip(min=1.0e-6, max=1.0)
+
+
+def read_uvis_ext ():
+    &#34;&#34;&#34;
+    Reads data on atmospheric UV/Vis extinction.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - uvis_x - wavelengths in um
+    - uvis_y - transmissions
+    &#34;&#34;&#34;
+    global uvis_x, uvis_y
+    ext_data = np.loadtxt(&#39;data/UVIS-ext.dat&#39;)
+    # extract wavelength (in um) and transmission of the atmosphere.
+    uvis_x = ext_data[:,0] /1000.0
+    uvis_y =  10.0**(-0.4 * ext_data[:,1])
+
+
+def read_vis_qe ():
+    &#34;&#34;&#34;
+    Reads data on efficiency of NTE in VIS.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - vis_x - wavelengths in um
+    - vis_y - efficiency
+    &#34;&#34;&#34;
+    global vis_x, vis_y
+    qe_data = np.loadtxt(&#39;data/efficiency/skipper_eff.csv&#39;, delimiter=&#39;,&#39;)
+    # extract wavelength (in um) and QE of VIS arm of NTE.
+    vis_x = qe_data[:,0]
+    vis_y = qe_data[:,-1]
+    # the QE must be in the range [0,1].
+    vis_y = vis_y.clip(min=1.0e-6, max=1.0)
+
+
+def read_oh ():
+    &#34;&#34;&#34;
+    Reads data on OH lines.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - oh_x - wavelengths in um
+    - oh_y - line strengths in ph/m^2/s/arcsec^2
+    &#34;&#34;&#34;
+    global oh_x, oh_y
+    oh_data = np.loadtxt(&#39;data/OH-lines.dat&#39;)
+    # convert wavelengths to um.
+    oh_x = oh_data[:,0]/10000.0
+    # convert wavelengths from vacuum to air
+    oh_x = oh_x / ((255.4/(41 - (1/oh_x)**2) + 29498.1/(146 - (1/oh_x)**2) + 64.328)*1e-6 + 1)
+    # save calibrated photon fluxes (in ph/m^2/s/arcsec^2). the calibration is done by using ESO&#39;s ETC.
+    oh_y = oh_data[:,1]/38.4
+    # the fluxes must be non-negative.
+    oh_y = oh_y.clip(min=0.0)
+
+
+def read_ir_qe ():
+    &#34;&#34;&#34;
+    Reads efficiency of NTE in IR.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - ir_x - wavelengths in um
+    - ir_y - efficiency
+    &#34;&#34;&#34;
+    global ir_x, ir_y, ir_y2
+    qe_data = np.loadtxt(&#39;data/efficiency/h2rg_eff.csv&#39;, delimiter=&#39;,&#39;)
+    # extract wavelength (in um) and QE of IR arm of NTE.
+    ir_x = qe_data[:,0]
+    ir_y = qe_data[:,-1]
+    # the QE must be in the range [0,1].
+    ir_y = ir_y.clip(min=1.0e-6, max=1.0)
+
+
+def read_uvb_sky ():
+    &#34;&#34;&#34;
+    Reads data on uvb night-sky emissions.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - uvbsky_x - wavelengths in um
+    - uvbsky_y - photon fluxes in ph/m^2/s/um/arcsec^2
+    &#34;&#34;&#34;
+    global uvbsky_x, uvbsky_y
+    sky_data = np.loadtxt(sky_filename)
+    # extract wavelength in um
+    uvbsky_x = sky_data[:,0] /1000.0
+    # and photon fluxes in photons/m^2/s/um/arcsec^2
+    uvbsky_y = sky_data[:,1]
+    # the flux must be non negative
+    uvbsky_y = uvbsky_y.clip(min=0.0)
+
+
+def read_uvb_qe ():
+    &#34;&#34;&#34;
+    Reads NTE efficiency in uvb range.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - uvb_x - wavelengths in um
+    - uvb_y - efficiency
+    &#34;&#34;&#34;
+    global uvb_x, uvb_y
+    qe_data = np.loadtxt(&#39;data/efficiency/em_eff.csv&#39;, delimiter=&#39;,&#39;)
+    # extract wavelength (in um) and QE of UVB arm of NTE
+    uvb_x = qe_data[:,0]
+    uvb_y = qe_data[:,-1] 
+    # the QE must be in the range [0,1].
+    uvb_y = uvb_y.clip(min=1.0e-6, max=1.0)
+
+
+def read_luvb_ext ():
+    &#34;&#34;&#34;
+    Reads uvb extinction data.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - luvb_x - wavelengths in um
+    - luvb_y - extinction
+    &#34;&#34;&#34;
+    global luvb_x, luvb_y
+    luvb_data = np.loadtxt(&#39;data/UVIS-ext.dat&#39;)
+    # extract wavelength (in um) and transmission of the atmosphere.
+    luvb_x = luvb_data[:,0]/1000
+    luvb_y = 10.0**(-0.4 * luvb_data[:,1])
+
+
+def init_snc_at_vis_ir_and_uvb (type, slit_width, disk_scale, psf_fwhm, bin_w=0, bin_l=0):
+    &#34;&#34;&#34;
+    Decides which data to read give the type
+
+    :param type: Which part of the spectrum is used
+    :param slit_width: The width of the slit in arcsec
+    :param disk_scale: The exponential scale of the disk in arcsec
+    :param psf_fwhm: The FWHM of the Gaussian PSF in arcsec
+
+    No output. It just reads data into the globals.
+    Also depending on :param type: it will read different
+    constants into the globals.
+    &#34;&#34;&#34;
+    if type == &#39;vis&#39;:
+        # read night sky emission data
+        read_vis_sky()
+        # read QE data for the VIS arm of NTE into
+        read_vis_qe()
+    elif type == &#39;ir&#39;:
+        # read OH data
+        read_oh()
+        # read QE data for the IR arm of NTE
+        read_ir_qe()
+    elif type == &#39;uvb&#39;:
+        # read night sky emission data
+        read_uvb_sky()
+        # read QE data for the UV arm of NTE into
+        read_uvb_qe()
+
+    # read atmospheric absorption data
+    read_nir_abs()
+    # read atmospheric extinction data
+    read_uvis_ext()
+    # read atmospheric extinction data
+    read_luvb_ext()
+    
+    # copy parameters into the common block
+    global s_width, s_eff, psf_sig, h_s, pix_length, pix_width, \
+        pix_ron, pix_dark, ff_error, tel_area
+    s_width = slit_width    # slit width in arcsec
+    s_eff = erf(np.sqrt(np.log(2.0)) * slit_width / psf_fwhm)   # flux fraction passing slit
+    psf_sig = psf_fwhm/np.sqrt(8.0*np.log(2.0)) # Sigma of Gaussian PSF in arcsec
+    h_s = disk_scale/psf_sig    # disk scale of galaxy to PSF sigma
+    if type == &#39;vis&#39;:
+        pix_length = pix_length_vis   # pixel length in arcsec 
+        pix_width = pix_width_vis    # pixel width in arcsec 
+        pix_ron = ron_vis   # readout noise in electrons/pixel 
+        pix_dark = dark_vis    # dark current in electrons/pixel/s 
+    elif type == &#39;uvb&#39;:
+        pix_length = pix_length_uvb   # pixel length in arcsec 
+        pix_width = pix_width_uvb    # pixel width in arcsec 
+        pix_ron = ron_uvb   # readout noise in electrons/pixel 
+        pix_dark = dark_uvb    # dark current in electrons/pixel/s 
+    elif type == &#39;ir&#39;:
+        pix_length = pix_length_ir   # pixel length in arcsec 
+        pix_width  = pix_width_ir   # pixel width in arcsec 
+        pix_ron = ron_ir   # readout noise in electrons/pixel 
+        pix_dark = dark_ir     # dark current in electrons/pixel/s 
+
+    ff_error = 0.001    # flat field error as a fraction
+    tel_area = 4.79833  # telescope area in m^2
+
+
+def disp_at_vis_ir_and_uvb (type, x):
+    &#34;&#34;&#34;
+    Calculates the spectral dispersion in arcsec/um
+    at any given wavelength for any arm.
+
+    :param type: Which part of the spectrum is used
+    :param x: The wavelength in um
+    :return: The dispersion in arcsec/um
+    &#34;&#34;&#34;
+    if type == &#39;vis&#39;:
+        r = 4000.0
+    elif type == &#39;ir&#39;:
+        r = 4000.0
+    elif type == &#39;uvb&#39;:
+        r = 4000.0
+    return r / x
+
+
+def lamgen_at_vis_ir_and_uvb (type, lambda_min, lambda_max):
+    &#34;&#34;&#34;
+    Generates an array of wavelengths.
+
+    :param type: Which part of the spectrum is used
+    :param lambda_min: The minimum wavelength in um
+    :param lambda_max: The maximum wavelength in um
+    :return: An array of wavelengths in um.
+             Wavelength array is on a logarithmix scale.
+    &#34;&#34;&#34;
+    # the middle wavelength on a logarithmic scale
+    lambda0 = np.sqrt(lambda_min * lambda_max)
+    # size of a pixel in wavelength units at lambda0
+    dlambda0 = pix_width / disp_at_vis_ir_and_uvb(type, lambda0)
+    x_min = min(lambda_min, lambda_max)
+    x_max = max(lambda_min, lambda_max)
+    ratio = x_max/x_min
+    # number of wavelength points in output array
+    N = np.round(lambda0 * np.log(ratio)/dlambda0) + 2
+    # float array in interval [0.0, 1.0]
+    x = np.arange(N, dtype=float)/(N - 1)
+    x = x_min * ratio**x
+    return x
+
+
+def y_spls (type):
+    &#34;&#34;&#34;
+    This functions makes interpolations of the data needed for
+    the given range.
+
+    No input or output:
+    It takes makes the interpolations as globals.
+    &#34;&#34;&#34;
+    global y_spl_vis, y_spl_nir, y_spl_uvis, y_spl_vissky, y_spl_ir, y_spl_uvb, y_spl_uvbsky, y_spl_luvb
+    if moon_stage != &#39;none&#39;:
+        make_moon_interpolation_func()
+    if type == &#39;vis&#39;:
+        y_spl_vis = UnivariateSpline(vis_x, vis_y, s=0, k=3)
+        y_spl_nir = UnivariateSpline(nir_x, nir_y, s=0, k=3)
+        y_spl_uvis = UnivariateSpline(uvis_x, uvis_y, s=0, k=3)
+        y_spl_luvb = UnivariateSpline(luvb_x, luvb_y, s=0, k=3)
+        y_spl_vissky = interp1d(vissky_x, vissky_y, kind=&#39;slinear&#39;)
+    elif type == &#39;ir&#39;:
+        y_spl_ir = UnivariateSpline(ir_x, ir_y, s=0, k=3)
+        y_spl_nir = UnivariateSpline(nir_x, nir_y, s=0, k=3)
+        y_spl_uvis = UnivariateSpline(uvis_x, uvis_y, s=0, k=3)
+        y_spl_luvb = UnivariateSpline(luvb_x, luvb_y, s=0, k=3)
+    elif type == &#39;uvb&#39;:
+        y_spl_uvb = UnivariateSpline(uvb_x, uvb_y, s=0, k=3)
+        y_spl_nir = UnivariateSpline(nir_x, nir_y, s=0, k=3)
+        y_spl_uvis = UnivariateSpline(uvis_x, uvis_y, s=0, k=3)
+        y_spl_luvb = UnivariateSpline(luvb_x, luvb_y, s=0, k=3)
+        y_spl_uvbsky = interp1d(uvbsky_x, uvbsky_y, kind=&#39;slinear&#39;)
+
+
+def qes_and_intps (name, lambd, t):
+    &#34;&#34;&#34;
+    Collective function for evaluation the interpolation.
+
+    :param name: What part of the spectrum is used.
+    :param lambd: The given wavelength range in um.
+    :param t: The type of interpolation. (Needed because 
+              additional processing might be needed for
+              specific interpolations)
+    :return: The interpolated values at lambd.
+    &#34;&#34;&#34;
+    x_name = globals()[name + &#39;_x&#39;]
+    y_name = globals()[&#39;y_spl_&#39; + name]
+    x = np.clip(lambd, x_name[0], x_name[-1])
+    y = y_name(x)
+    if t == &#39;qe_at_ir&#39; or t == &#39;qe_at_vis&#39; or t == &#39;qe_at_uvb&#39;:
+        y = pessimism_factor * y
+    elif t == &#39;trans_at_nir&#39;:
+        y = y.clip(min=0.0)
+    elif t == &#39;trans_at_uvis&#39; or t == &#39;intp_vis_sky&#39; or t == &#39;intp_uvb_sky&#39; or t == &#39;trans_at_luvb&#39;:
+        y = y
+    else:
+        print(&#39;MISTAKE: wrong type inserted in qes_and_intps&#39;)
+        exit()
+    return y
+
+
+def make_moon_interpolation_func():
+    &#34;&#34;&#34;
+    Makes the function for interpolation of the moon spectrum.
+
+    No input and no output.
+    Makes the function for the moon interpolation to a global
+    &#34;&#34;&#34;
+    component_data = np.loadtxt(sky_component_filename)
+    wl = component_data[:, 0] / 1000
+    moon = component_data[:, 1]
+    global moon_interpolation
+    moon_interpolation = interp1d(wl, moon, kind=&#39;slinear&#39;)
+
+
+def skycont_at_ir (lambd):
+    &#34;&#34;&#34;
+    Calculates the near infrafred continuum between the
+    OH lines, as defined by values in J at 1.25 um
+    and in H at 1.67 um. A linear interpolation in 
+    ln(photon_flux) - ln(lambda) is done.
+    The photon flux is given in ph/s/m^2/um/arcsec^2.
+
+    :param lambd: The given wavelengths in um
+    :return: Specific photon flux at lambda.
+    &#34;&#34;&#34;
+    lamb_J = 1.25
+    flux_J = 310.0
+    lamb_H = 1.665
+    flux_H = 590.0
+    x = lambd
+    HoJ = np.log(lamb_H/lamb_J)
+    exp_J = np.log(lamb_H/x)/HoJ
+    exp_H = np.log(x/lamb_J)/HoJ
+    y = flux_J**exp_J * flux_H**exp_H
+    if moon_stage != &#39;none&#39;:
+        y += moon_interpolation(x)
+    return y
+
+
+def thermalem_at_ir (lambd):
+    &#34;&#34;&#34;
+    Calculates the near infrared thermal continuum.
+    A tempertaure of T = 288K and an emissivity of
+    emis = 0.25 are assumed. The photon flux is
+    given in ph/s/m^2/um/arcsec^2.
+
+    :param lambd: The given wavelenghts in um.
+    :return: Specific photon flux at lambda.
+    &#34;&#34;&#34;
+    Temp = 288.0
+    emis = 0.25
+    x = lambd
+    y = (1 - (1 - emis) * qes_and_intps(&#39;nir&#39;, x, &#39;trans_at_nir&#39;)) * planck(Temp, x)
+    return y
+
+
+def skyem_at_vis_ir_and_uvb (type, sigma, lambd):
+    &#34;&#34;&#34;
+    Calculates the specific photon flux from the night
+    sky at a given wavelength in the VIS/IR/UVB region
+    with given spectral resolution, as specified by a
+    Gaussian sigma.
+
+    :param type: String that determines if VIS/IR/UVB is used
+    :param sigma: The sky spectrum, as transmitted
+                  through the dispersion sigma[i] 
+                  at lambda[i].
+                  The sigmas are given in um.
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd
+             given in units of photons/m^2/s/um/arcsec^2.
+    &#34;&#34;&#34;
+    if type == &#39;vis&#39;:
+        # step size
+        step = 0.0000030
+    elif type == &#39;ir&#39;:
+        # photon fluxes of the transmitted OH lines
+        oh_flux = qes_and_intps(&#39;nir&#39;, oh_x, &#39;trans_at_nir&#39;)**am * oh_y
+    elif type == &#39;uvb&#39;:
+        step = 0.0000025
+    y = lambd.copy()
+    # convolve the sky spectrum with a Gaussian
+    for i in range(len(lambd)):
+        # wavelength of sample point No. i
+        x0 = lambd[i]
+        # Gaussian sigma of sample point No. i
+        s0 = sigma[i]
+        if type == &#39;vis&#39; or type == &#39;uvb&#39;:
+            # number of points on each side of x0
+            N = np.round(12.0*s0/step)
+        elif type == &#39;ir&#39;:
+            # number of points on each side of x0
+            N = 30
+            # step size
+            step = 0.4 * s0
+        # range [-12*s0, +12*s0] of wavelengths around the point x0
+        x = (np.arange(2*N + 1) - N)*step + x0
+        if type == &#39;vis&#39;:
+            # photon fluxes of the transmitted spectrum at the discrete wavelengths
+            flux = step * qes_and_intps(&#39;uvis&#39;, x, &#39;trans_at_uvis&#39;)**am * qes_and_intps(&#39;vissky&#39;, x, &#39;intp_vis_sky&#39;)
+        elif type == &#39;ir&#39;:
+            # photon fluxes of the transmitted continuum at the discrete wavelengths
+            flux = step * qes_and_intps(&#39;nir&#39;, x, &#39;trans_at_nir&#39;)**am * skycont_at_ir(x)
+        elif type == &#39;uvb&#39;:
+            # photon fluxes of the transmitted spectrum at the discrete wavelengths
+            flux = step * qes_and_intps(&#39;luvb&#39;, x, &#39;trans_at_luvb&#39;)**am * qes_and_intps(&#39;uvbsky&#39;, x, &#39;intp_uvb_sky&#39;)
+
+        # calculate the Gaussian weighted sum of the transmitted sky spectrum.
+        y[i] = sum(flux * gauss((x - x0)/s0))/s0
+        if type == &#39;ir&#39;:
+            # distances of the OH lines from the sample point x0, in units of the Gaussian sigma s0.
+            z = (oh_x - x0)/s0
+            # select the lines that deviates less than 12*sigma, and add the Gaussian weighted sum of the transmitted fluxes.
+            k = abs(z) &lt; 12.0
+            y[i] = y[i] + sum(oh_flux[k]*gauss(z[k]))/s0
+
+    if type == &#39;ir&#39;:
+        y = y + thermalem_at_ir(lambd)
+
+    return y
+
+
+def s2n (ron, fe, dark, h_s, sig, flux, sky, x):
+    &#34;&#34;&#34;
+    Calculates the S/N per pixel of a profile fit along the slit.
+
+    :param ron: Readout noise in electrons per pixel.
+    :param fe: Fractional flat-field error.
+    :param dark: Dark current in electrons per pixel.
+    :param h_s: &lt;exp scale length&gt; / &lt;Gaussian sigma&gt;
+    :param sig: Sigma of the Gaussian seeing core in pixels.
+    :param flux: Flux in electrons per exposure time.
+    :param sky: Sky flux in electrons per pixel per exp time.
+    :return: S/N per pixel along dispersion direction.
+    &#34;&#34;&#34;
+    # calculate the object profile
+    P = hgauss(h_s, x/sig)
+    # normalize the profile sum to 1.0
+    P = P/sum(P)
+    # calculate the background variance per pixel
+    bg = sky + dark + ron**2 + (fe * sky)**2
+    # calculate the weight per pixel along the slit
+    W = 1/(flux * P + bg)
+    # shift the profile such that total(W*Q) = 0
+    Q = P - sum(W*P)/sum(W)
+    # calculate the signal-to-noise per pixel
+    y = flux * np.sqrt(sum(W*Q**2))
+    return y
+
+
+def snc_at_vis_ir_and_uvb(type, nexp, etime, func, abmag, maglam, param, lambd):
+    &#34;&#34;&#34;
+    Calculates the signal-to-noise (per pixel) for a range
+    of given wavelengths for an arm.
+
+    :param type: Which arm is wanted to use.
+    :param nexp: Number of single exposures.
+    :param etime: Exposure time in s.
+    :param func: Which spectral law is wanted.
+    :param abmag: AB magnitude at specified wavelength.
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param param: Spectral index (alpha) or temperature.
+    :param lambd: The given wavelengths in um.
+    :return: The Signal-to-Noise per pixel.
+    &#34;&#34;&#34;
+    # number of wavelength points
+    Npts = len(lambd)
+    # Gaussian sigmas in wavelength space corresponding to the given slit width
+    sigma = s_width * gauss(0.0) / disp_at_vis_ir_and_uvb(type, lambd)
+    # number of pixels along the slit
+    Npix = np.round(s_length / pix_length)
+    # wavelength interval corresponding to the size of a pixel
+    dlambda = pix_width / disp_at_vis_ir_and_uvb(type, lambd)
+    # QE at each of the wavelength points
+    if type == &#39;vis&#39;:
+        qe = qes_and_intps(type, lambd, &#39;qe_at_vis&#39;)
+    elif type == &#39;ir&#39;:
+        qe = qes_and_intps(type, lambd, &#39;qe_at_ir&#39;)
+    elif type == &#39;uvb&#39;:
+        qe = qes_and_intps(type, lambd, &#39;qe_at_uvb&#39;)
+    # sky emission in photoelectrons/m^2/s/arcsec^2
+    skyem = qe * dlambda * skyem_at_vis_ir_and_uvb(type, sigma, lambd)
+    # sky emission in photoelectrons/pixel/exposure
+    skyem = (tel_area * etime * pix_length * s_width) * skyem
+    # object flux in photons/m^2/s/um
+    objem = objem_at_all(func, abmag, maglam, param, sigma, lambd)
+    # object flux in photoelectrons/m^2/s
+    objem = qe * dlambda * objem
+    # object flux in photoelectrons/exposure
+    objem = (tel_area * etime * s_eff) * objem
+    # dark current in electrons/pixel/exposure
+    dark = pix_dark * etime
+    # sigma of the Gaussian seeing core in pixels along the slit.
+    sig_pix = psf_sig / pix_length
+    # calculate the S/N for each wavelength
+    y = np.zeros((Npts, 2))
+    # there are Npix pixels along the slit
+    x_s2n = np.arange(Npix, dtype=float)
+    # place the object profile at the center of the slit
+    x_s2n = x_s2n - (Npix - 1)/2
+    for i in range(Npts):
+        # let us first obtain the S/N for a single exposure
+        y[i,0] = s2n(pix_ron, ff_error, dark, h_s, sig_pix, objem[i], skyem[i], x_s2n)
+        # and then the S/N for the sum of nexp exposures
+        y[i,0] = np.sqrt(float(nexp)) * y[i,0]
+        # finally we simulate the sum of nexp exposures
+        y[i,1] = (1.0 + np.random.normal() / y[i,0]) * float(nexp) * objem[i]
+    return y
+
+
+if __name__ == &#39;__main__&#39;:
+
+    # Configparser input
+    config = configparser.ConfigParser()
+    config.read(&#39;data/config.ini&#39;)
+
+    Exp_Time = config[&#39;OBSERVATION&#39;][&#39;Exposure_time&#39;]
+    Exp_Time = float(Exp_Time)
+    ObjectType = config[&#39;OBSERVATION&#39;][&#39;Template&#39;][0]
+    Parameter = config[&#39;OBSERVATION&#39;][&#39;Template&#39;][1:]
+    Parameter = float(Parameter)
+    AB_mag = config[&#39;OBSERVATION&#39;][&#39;AB_mag&#39;]
+    AB_mag = float(AB_mag)
+    MagLam = config[&#39;OBSERVATION&#39;][&#39;Wavelength_of_AB_mag&#39;]
+    MagLam = float(MagLam)
+    LambdaMin = config[&#39;SPEC&#39;][&#39;WL_lower_limit&#39;]
+    LambdaMin = float(LambdaMin)
+    LambdaMax = config[&#39;SPEC&#39;][&#39;WL_upper_limit&#39;]
+    LambdaMax = float(LambdaMax)
+    SlitWidth = config[&#39;SPEC&#39;][&#39;Slit_width&#39;]
+    SlitWidth = float(SlitWidth)
+    PSF_FWHM = config[&#39;OBSERVATION&#39;][&#39;FWHM_seeing&#39;]
+    PSF_FWHM = float(PSF_FWHM)
+    Binning_W = config[&#39;SPEC&#39;][&#39;Detector_binning_dispersion_direction&#39;]
+    Binning_W = int(Binning_W)
+    Binning_L = config[&#39;SPEC&#39;][&#39;Detector_binning_spatial_direction&#39;]
+    Binning_L = int(Binning_L)
+    SN_Binning = config[&#39;SPEC&#39;][&#39;Post_detector_binning&#39;]
+    SN_Binning = int(SN_Binning)
+    N_Exp = config[&#39;OBSERVATION&#39;][&#39;Nr_of_exposures&#39;]
+    N_Exp = int(N_Exp)
+    # mag_zero_point is ther zero point of the AB magnitude system, when in terms of wavelength and photons.
+    mag_zero_point = 26.847
+    pessimism_factor = config[&#39;SPEC&#39;][&#39;pessimism_factor&#39;]
+    pessimism_factor = float(pessimism_factor)
+    dark_vis = config[&#39;VIS_DET&#39;][&#39;dark&#39;]
+    dark_vis = float(dark_vis)
+    dark_ir = config[&#39;IR_DET&#39;][&#39;dark&#39;]
+    dark_ir = float(dark_ir)
+    dark_uvb = config[&#39;UV_DET&#39;][&#39;dark&#39;]
+    dark_uvb = float(dark_uvb)
+    ron_vis = config[&#39;VIS_DET&#39;][&#39;ron&#39;]
+    ron_vis = float(ron_vis)
+    ron_uvb = config[&#39;UV_DET&#39;][&#39;ron&#39;]
+    ron_uvb = float(ron_uvb)
+    ron_ir = config[&#39;IR_DET&#39;][&#39;ron&#39;]
+    ron_ir = float(ron_ir)
+    pix_length_vis = config[&#39;VIS_DET&#39;][&#39;pix_length&#39;]
+    pix_length_vis = float(pix_length_vis)
+    pix_length_ir = config[&#39;IR_DET&#39;][&#39;pix_length&#39;]
+    pix_length_ir = float(pix_length_ir)
+    pix_length_uvb = config[&#39;UV_DET&#39;][&#39;pix_length&#39;]
+    pix_length_uvb = float(pix_length_uvb)
+    pix_width_vis = config[&#39;VIS_DET&#39;][&#39;pix_width&#39;]
+    pix_width_vis = float(pix_width_vis)
+    pix_width_ir = config[&#39;IR_DET&#39;][&#39;pix_width&#39;]
+    pix_width_ir = float(pix_width_ir)
+    pix_width_uvb = config[&#39;UV_DET&#39;][&#39;pix_width&#39;]
+    pix_width_uvb = float(pix_width_uvb)
+
+    uvb_arm_min = config[&#39;UV_DET&#39;][&#39;arm_min&#39;]
+    uvb_arm_min = float(uvb_arm_min)
+    uvb_arm_max = config[&#39;UV_DET&#39;][&#39;arm_max&#39;]
+    uvb_arm_max = float(uvb_arm_max)
+    vis_arm_min = config[&#39;VIS_DET&#39;][&#39;arm_min&#39;]
+    vis_arm_min = float(vis_arm_min)
+    vis_arm_max = config[&#39;VIS_DET&#39;][&#39;arm_max&#39;]
+    vis_arm_max = float(vis_arm_max)
+    ir_arm_min = config[&#39;IR_DET&#39;][&#39;arm_min&#39;]
+    ir_arm_min = float(ir_arm_min)
+    ir_arm_max = config[&#39;IR_DET&#39;][&#39;arm_max&#39;]
+    ir_arm_max = float(ir_arm_max)
+
+    # New parameters
+    global s_length
+    s_length = config[&#39;SPEC&#39;][&#39;Slit_length&#39;]
+    s_length = float(s_length)
+
+    global lambda_split_uvb_vis, lambda_split_vis_ir
+    lambda_split_uvb_vis = config[&#39;SPEC&#39;][&#39;lambda_split_uvb_vis&#39;]
+    lambda_split_uvb_vis = float(lambda_split_uvb_vis)
+    lambda_split_vis_ir = config[&#39;SPEC&#39;][&#39;lambda_split_vis_ir&#39;]
+    lambda_split_vis_ir = float(lambda_split_vis_ir)
+
+    global am
+    am = config[&#39;OBSERVATION&#39;][&#39;airmass&#39;]
+    am = float(am)
+
+    global sky_filename
+    global sky_component_filename
+    global moon_stage
+    moon_stage = config[&#39;OBSERVATION&#39;][&#39;moon_stage&#39;]
+    if moon_stage == &#39;full&#39;:
+        sky_filename = &#39;data/skycalc_radiance_full_moon.dat&#39;
+        sky_component_filename = &#39;data/skycalc_radiance_components_full_moon.dat&#39;
+    elif moon_stage == &#39;new&#39;:
+        sky_filename = &#39;data/skycalc_radiance_new_moon.dat&#39;
+        sky_component_filename = &#39;data/skycalc_radiance_components_new_moon.dat&#39;
+    elif moon_stage == &#39;half&#39;:
+        sky_filename = &#39;data/skycalc_radiance_half_moon.dat&#39;
+        sky_component_filename = &#39;data/skycalc_radiance_components_half_moon.dat&#39;
+    elif moon_stage == &#39;none&#39;:
+        sky_filename = &#39;data/skycalc_radiance_no_moon.dat&#39;
+    elif moon_stage == &#39;custom&#39;:
+        sky_filename = config[&#39;OBSERVATION&#39;][&#39;custom_sky_file&#39;]
+        sky_component_filename = config[&#39;OBSERVATION&#39;][&#39;custom_moon_file&#39;]
+    else:
+        raise ValueError(&#39;Invalid moon stage&#39;)
+
+    # The binning factors must be greater than or equal to 1
+    Binning_W = max(Binning_W, 1)
+    Binning_L = max(Binning_L, 1)
+    SN_Binning = max(SN_Binning, 1)
+    N_Exp = max(N_Exp, 1)
+
+    # The kernel for binning the Signal-to-Noise must have an odd number of elements: (2*N2 + 1)
+    N2 = int(SN_Binning/2)
+    N_kernel = int(2*N2 + 1)
+
+    # The kernel elements are set to 1.0
+    Kernel = np.ones(N_kernel, dtype=float)
+
+    # I assume that wavelengths are given in Angstrom
+    if ObjectType == &#39;T&#39;:
+        Parameter /= 10000.0
+    MagLam /= 10000.0
+    LambdaMin /= 10000.0
+    LambdaMax /= 10000.0
+
+    # For now, we patch object type
+    if ObjectType == &#39;P&#39;:
+        ObjectType = &#39;powerlaw&#39;
+    if ObjectType == &#39;B&#39;:
+        ObjectType = &#39;plancklaw&#39;
+    if ObjectType == &#39;T&#39;:
+        ObjectType = &#39;template&#39;
+        TemplateName = config[&#39;OBSERVATION&#39;][&#39;Template_file&#39;]
+
+    # Read the template spectrum file if needed
+    if ObjectType == &#39;template&#39;:
+        read_template(AB_mag, MagLam, Parameter, TemplateName)
+    else:
+        template_x = np.array([1,2,3])
+        template_y = np.array([1,2,3])
+
+    # For now we set DiskScale to a fixed low value of 0.05
+    DiskScale  = 0.05
+
+    # Now we get the wavelength ranges for the individual arms
+    Range_UVB = np.array([uvb_arm_min, uvb_arm_max])
+    Range_VIS = np.array([vis_arm_min, vis_arm_max])
+    Range_IR = np.array([ir_arm_min, ir_arm_max])
+
+    Cov_UVB     = [max(LambdaMin, Range_UVB[0]), min(LambdaMax, Range_UVB[1])]
+    Cov_VIS = [max(LambdaMin, Range_VIS[0]), min(LambdaMax, Range_VIS[1])]
+    Cov_IR = [max(LambdaMin, Range_IR[0]), min(LambdaMax, Range_IR[1])]
+    
+    # Now calculate the S/N for each of the arms
+
+    # UVB arm
+    s_n_UVB = 0.0
+    sim_UVB = 0.0
+
+    if Cov_UVB[0] &lt; Cov_UVB[1]:
+        init_snc_at_vis_ir_and_uvb(&#39;uvb&#39;, SlitWidth, DiskScale, PSF_FWHM , Binning_W , Binning_L)
+        y_spls (&#39;uvb&#39;)
+        lam_UVB = lamgen_at_vis_ir_and_uvb(&#39;uvb&#39;, Cov_UVB[0] , Cov_UVB[1])
+        snc = snc_at_vis_ir_and_uvb(&#39;uvb&#39;, N_Exp, Exp_Time, ObjectType, AB_mag, MagLam, Parameter, lam_UVB)
+        s_n_UVB = snc[:,0]
+        sim_UVB = snc[:,1]
+        s_n_sqr = s_n_UVB**2
+        s_n_UVB = np.sqrt(np.convolve(s_n_sqr, Kernel, mode=&#39;same&#39;))
+        # The first and last N2 elements of the convolved array are set to 0.0 by the function convol(), so we must truncate s_n_UVB and lam_uvb by N2 elements at both ends.
+        lam_UVB = lam_UVB[N2:len(lam_UVB)-N2]
+        s_n_UVB = s_n_UVB[N2:len(s_n_UVB)-N2]
+        sim_UVB = sim_UVB[N2:len(sim_UVB)-N2]
+        print(&#39;Median UVB S/N = &#39; + str(np.median(s_n_UVB)))
+        print(&#39;Mean UVB S/N = &#39; + str(np.mean(s_n_UVB)))
+        print(&#39;Min UVB S/N = &#39; + str(np.min(s_n_UVB)))
+        print(&#39;Max UVB S/N = &#39; + str(np.max(s_n_UVB)))
+
+    # VIS arm
+    s_n_VIS = 0.0
+    sim_VIS = 0.0
+
+    if Cov_VIS[0] &lt; Cov_VIS[1]:
+        type = &#39;vis&#39;
+    if Cov_VIS[0] &lt; Cov_VIS[1]:
+        init_snc_at_vis_ir_and_uvb(&#39;vis&#39;, SlitWidth, DiskScale, PSF_FWHM , Binning_W , Binning_L)
+        y_spls (&#39;vis&#39;)
+        lam_VIS = lamgen_at_vis_ir_and_uvb(&#39;vis&#39;, Cov_VIS[0], Cov_VIS[1])
+        snc = snc_at_vis_ir_and_uvb(&#39;vis&#39;, N_Exp,Exp_Time,ObjectType,AB_mag,MagLam,Parameter,lam_VIS)
+        s_n_VIS = snc[:,0]
+        sim_VIS = snc[:,1]
+        s_n_sqr = s_n_VIS**2
+        s_n_VIS = np.sqrt(np.convolve(s_n_sqr, Kernel, mode=&#39;same&#39;))
+        # The first and last N2 elements of the convolved array are set to 0.0 by the function convol(), so we must truncate s_n_VIS and lam_vis by N2 elements at both ends.
+        lam_VIS = lam_VIS[N2:len(lam_VIS)-N2]
+        s_n_VIS = s_n_VIS[N2:len(s_n_VIS)-N2]
+        sim_VIS = sim_VIS[N2:len(sim_VIS)-N2]
+        print(&#39;Median VIS S/N = &#39; + str(np.median(s_n_VIS)))
+        print(&#39;Mean VIS S/N = &#39; + str(np.mean(s_n_VIS)))
+        print(&#39;Min VIS S/N = &#39; + str(np.min(s_n_VIS)))
+        print(&#39;Max VIS S/N = &#39; + str(np.max(s_n_VIS)))
+    
+    # IR arm
+    s_n_IR = 0.0
+    sim_IR = 0.0
+
+    if Cov_IR[0] &lt; Cov_IR[1]:
+        type = &#39;ir&#39;
+    if Cov_IR[0] &lt; Cov_IR[1]:
+        init_snc_at_vis_ir_and_uvb(&#39;ir&#39;, SlitWidth, DiskScale, PSF_FWHM)
+        y_spls (&#39;ir&#39;)
+        lam_IR = lamgen_at_vis_ir_and_uvb(&#39;ir&#39;, Cov_IR[0], Cov_IR[1])
+        snc = snc_at_vis_ir_and_uvb(&#39;ir&#39;, N_Exp,Exp_Time,ObjectType,AB_mag,MagLam,Parameter,lam_IR)
+        s_n_IR = snc[:,0]
+        sim_IR = snc[:,1]
+        s_n_sqr = s_n_IR**2
+        s_n_IR = np.sqrt(np.convolve(s_n_sqr, Kernel, mode=&#39;same&#39;))
+        # The first and last N2 elements of the convolved array are set to 0.0 by the function convol(), so we must truncate s_n_IR and lam_ir by N2 elements at both ends.
+        lam_IR = lam_IR[N2:len(lam_IR)-N2]
+        s_n_IR = s_n_IR[N2:len(s_n_IR)-N2]
+        sim_IR = sim_IR[N2:len(sim_IR)-N2]
+        print(&#39;Median IR S/N = &#39; + str(np.median(s_n_IR)))
+        print(&#39;Mean IR S/N = &#39; + str(np.mean(s_n_IR)))
+        print(&#39;Min IR S/N = &#39; + str(np.min(s_n_IR)))
+        print(&#39;Max IR S/N = &#39; + str(np.max(s_n_IR)))
+
+    # Now to the plotting
+
+    text        = np.zeros(11, dtype=&#39;object&#39;)
+    param       = np.zeros(11, dtype=&#39;object&#39;)
+    text[0] = &#39;Exposure Time (single exposure):&#39;
+    text[1] = &#39;Number of exposures:&#39;
+    text[2] = &#39;Slit Width:&#39;
+    text[3] = &#39;FWHM of PSF:&#39;
+    text[4] = &#39;Object Type:&#39;
+    if ObjectType == &#39;powerlaw&#39;:
+        text[5] = &#39;Spectral Index:&#39;
+    elif ObjectType == &#39;plancklaw&#39;:
+        text[5] = &#39;Temperature:&#39;
+    elif ObjectType == &#39;template&#39;:
+        text[5] = &#39;FWHM of Photometric Band:&#39;
+    text[6]  = &#39;AB Magnitude:&#39;
+    text[7]  = &#39;at wavelength:&#39;
+    text[8]  = &#39;Detector binning along dispersion:&#39;
+    text[9]  = &#39;Detector binning along slit:&#39;
+    text[10]  = &#39;Signal-to-Noise binning factor:&#39;
+
+    param[0]  = str(&#39;{:.1f}&#39;.format(Exp_Time)) + &#39; s&#39;
+    param[1] = str(np.round(N_Exp)) + &#39; exposures&#39;
+    param[2]  = str(&#39;{:.2f}&#39;.format(SlitWidth)) + &#39; arcsec&#39;
+    param[3]  = str(&#39;{:.2f}&#39;.format(PSF_FWHM)) + &#39; arcsec&#39;
+    param[4]  = ObjectType
+    if ObjectType == &#39;powerlaw&#39;:
+        param[5]  = str(&#39;{:.2f}&#39;.format(Parameter))
+    elif ObjectType == &#39;plancklaw&#39;:
+        param[5]  = str(&#39;{:.1f}&#39;.format(Parameter)) + &#39; K&#39;
+    elif ObjectType == &#39;template&#39;:
+        param[5]  = str(&#39;{:.1f}&#39;.format(10000.0 * Parameter)) + &#39; A&#39;
+    param[6]  = str(&#39;{:.2f}&#39;.format(AB_mag))
+    param[7]  = str(&#39;{:.1f}&#39;.format(10000.0 * MagLam)) + &#39; A&#39;
+    param[8]  = str(np.round(Binning_W)) + &#39; pixels&#39;
+    param[9]  = str(np.round(Binning_L)) + &#39; pixels&#39;
+    param[10]  = str(np.round(N_kernel)) + &#39; binned pixels/channel&#39;
+
+    # plot the Signal-to-Noise
+
+    plt.figure(figsize=(15,10))
+    plt.tight_layout()
+    plt.title(&#39;Signal-to-Noise&#39;, size=22)
+    plt.xlabel(r&#39;Wavelength  [ $\mu m$ ]&#39;, size=18)
+    plt.ylabel(&#39;S/N  [ per channel ]&#39;, size=18)
+    plt.xlim(LambdaMin, LambdaMax)
+    y_max       = np.max( np.append(s_n_VIS, s_n_IR) )
+    plt.ylim(-1.4*y_max , 1.4*y_max)
+
+    if ( Cov_VIS[0] &lt; Cov_VIS[1] ):
+        plt.plot(lam_VIS, s_n_VIS, lw=1, color=&#39;k&#39;) #, psym=10
+    if ( Cov_IR[0] &lt; Cov_IR[1] ):
+        plt.plot(lam_IR,  s_n_IR, lw=1, color=&#39;k&#39;) #, psym=10
+    if ( Cov_UVB[0] &lt; Cov_UVB[1] ):
+        plt.plot(lam_UVB,  s_n_UVB, lw=1, color=&#39;k&#39;)
+
+    dx  = ( LambdaMax - LambdaMin ) / 15.0
+    dy  = y_max / 9.0
+    x1  = LambdaMin + dx
+    x2  = LambdaMin + 9*dx
+    y = -1.4*dy
+    for i in range(len(text)):
+        plt.text(x1, y, text[i], size=14)
+        plt.text(x2, y, param[i], size=14)
+        y = y - dy
+
+    plt.savefig(&#39;Signal-to-Noise.pdf&#39;)
+
+    # plot the simulated spectrum
+
+    y_max = np.max( np.append(sim_VIS, sim_IR) )
+    y_min = np.min( np.append(sim_VIS, sim_IR) )
+    y_ave = 0.5*(y_min + y_max)
+    y_hra = 0.5*(y_max - y_min)
+
+    plt.figure(figsize=(15,10))
+    plt.tight_layout()
+    plt.title(&#39;Simulated Spectrum&#39;, size=22)
+    plt.xlabel(r&#39;Wavelength  [ $\mu m$ ]&#39;, size=18)
+    plt.ylabel(&#39;Counts per Channel&#39;, size=18)
+    plt.xlim(LambdaMin, LambdaMax)
+    plt.ylim(y_ave + -1.2*y_hra , y_ave + 1.2*y_hra)
+
+    if ( Cov_VIS[0] &lt; Cov_VIS[1] ):
+        plt.plot(lam_VIS, sim_VIS, lw=1, color=&#39;k&#39;)
+    if ( Cov_IR[0] &lt; Cov_IR[1] ):
+        plt.plot(lam_IR,  sim_IR, lw=1, color=&#39;k&#39;)
+    if ( Cov_UVB[0] &lt; Cov_UVB[1] ):
+        plt.plot(lam_UVB,  sim_UVB, lw=1, color=&#39;k&#39;)
+
+    plt.savefig(&#39;Simulated-Spectrum.pdf&#39;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="NTE_ETC.asinh"><code class="name flex">
+<span>def <span class="ident">asinh</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the inverse of the hyperbolic sine function.
+asinh(x) = sign(x)*asinh(abs(x))
+asinh(x) = alog(sqrt(1 + x^2) + x)</p>
+<p>:param x: Real scalar or array.
+:return: Inverse of the hyperbolic sine function.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def asinh (x):
+    &#34;&#34;&#34;
+    Calculates the inverse of the hyperbolic sine function.
+    asinh(x) = sign(x)*asinh(abs(x))
+    asinh(x) = alog(sqrt(1 + x^2) + x)
+
+    :param x: Real scalar or array.
+    :return: Inverse of the hyperbolic sine function.
+    &#34;&#34;&#34;
+    # use that asinh(x) = sign(x)*asinh(abs(x))
+    z = abs(x)
+    # calculate asinh(x) for positive arguments, only
+    i = x &gt;= 0
+    x[i] = np.log(np.sqrt(z[i]**2 + 1) + z[i])
+    j = x &lt; 0
+    x[j] = -np.log(np.sqrt(z[j]**2 + 1) + z[j])
+    return x</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.atmos_trans"><code class="name flex">
+<span>def <span class="ident">atmos_trans</span></span>(<span>lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the atmospheric transmission at any
+wavelength in the full range.</p>
+<p>:param lambd: Wavelength in um.
+:return: Atmospheric transmission.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def atmos_trans (lambd):
+    &#34;&#34;&#34;
+    Calculates the atmospheric transmission at any
+    wavelength in the full range.
+
+    :param lambd: Wavelength in um.
+    :return: Atmospheric transmission.
+    &#34;&#34;&#34;
+    # Split between a UV-Visual part and a NIR part of the spectrum
+    y = lambd.copy()
+    k = lambd &lt; lambda_split_uvb_vis
+    y[k] = qes_and_intps(&#39;luvb&#39;, lambd[k], &#39;trans_at_luvb&#39;)
+    k =  (lambd &lt; lambda_split_vis_ir) &amp; (lambd &gt;= lambda_split_uvb_vis)
+    y[k] = qes_and_intps(&#39;uvis&#39;, lambd[k], &#39;trans_at_uvis&#39;)
+    k = lambd &gt;= lambda_split_vis_ir
+    y[k] = qes_and_intps(&#39;nir&#39;, lambd[k], &#39;trans_at_nir&#39;)
+    return y**am</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.call_func"><code class="name flex">
+<span>def <span class="ident">call_func</span></span>(<span>func, abmag, maglam, param, x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decides which function to use based on func string.</p>
+<p>:param func: String with the name of the function to use.
+:param abmag: AB magnitude at specified wavelength
+:param maglam: Wavelength (in um) where abmag is given.
+:param param: Spectral index, temperature or bandwidth.
+:param x: The wavelengths given in um.
+:return: Specific photon flux at x given in
+units photons/s/m^2/um.
+Based on specified function.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def call_func (func, abmag, maglam, param, x):
+    &#34;&#34;&#34;
+    Decides which function to use based on func string.
+
+    :param func: String with the name of the function to use.
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param param: Spectral index, temperature or bandwidth.
+    :param x: The wavelengths given in um.
+    :return: Specific photon flux at x given in
+             units photons/s/m^2/um.
+             Based on specified function.
+    &#34;&#34;&#34;
+    if func == &#39;powerlaw&#39;:
+        f = powerlaw(abmag, maglam, param, x)
+    elif func == &#39;plancklaw&#39;:
+        f = plancklaw(abmag, maglam, param, x)
+    elif func == &#39;template&#39;:
+        f = template(x)
+    return f</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.disp_at_vis_ir_and_uvb"><code class="name flex">
+<span>def <span class="ident">disp_at_vis_ir_and_uvb</span></span>(<span>type, x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the spectral dispersion in arcsec/um
+at any given wavelength for any arm.</p>
+<p>:param type: Which part of the spectrum is used
+:param x: The wavelength in um
+:return: The dispersion in arcsec/um</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def disp_at_vis_ir_and_uvb (type, x):
+    &#34;&#34;&#34;
+    Calculates the spectral dispersion in arcsec/um
+    at any given wavelength for any arm.
+
+    :param type: Which part of the spectrum is used
+    :param x: The wavelength in um
+    :return: The dispersion in arcsec/um
+    &#34;&#34;&#34;
+    if type == &#39;vis&#39;:
+        r = 4000.0
+    elif type == &#39;ir&#39;:
+        r = 4000.0
+    elif type == &#39;uvb&#39;:
+        r = 4000.0
+    return r / x</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.gauss"><code class="name flex">
+<span>def <span class="ident">gauss</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Caclulate the normalized Gaussian function for the array x.</p>
+<p>:param x: array of values. In this code x is used as (arr - arr0)/sigma)
+:return: The values of the Gaussian.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gauss (x):
+    &#34;&#34;&#34;
+    Caclulate the normalized Gaussian function for the array x.
+
+    :param x: array of values. In this code x is used as (arr - arr0)/sigma)
+    :return: The values of the Gaussian.
+    &#34;&#34;&#34;
+    return np.exp(-0.5 * x**2)/np.sqrt(2.0 * np.pi)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.hgauss"><code class="name flex">
+<span>def <span class="ident">hgauss</span></span>(<span>x, s)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a semi-realistic object profile along the slit.
+hgauss(x, s) = exp(-(sqrt(1 + (x<em>s)^2) - 1)/x^2)
+= exp(-2.0</em>(sinh(0.5<em>asinh(x</em>s))/x)^2)
+This is a simple way to obtain a profile resembling a disk galaxy
+convolved by a Gaussian seeing.</p>
+<p>:param x: Exponential scale divided by Gaussian sigma.
+:param s: Distance from center of slit in sigma units.
+:return: Signal profile along the slit.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hgauss (x,s):
+    &#34;&#34;&#34;
+    Generates a semi-realistic object profile along the slit.
+    hgauss(x, s) = exp(-(sqrt(1 + (x*s)^2) - 1)/x^2)
+                 = exp(-2.0*(sinh(0.5*asinh(x*s))/x)^2)
+    This is a simple way to obtain a profile resembling a disk galaxy
+    convolved by a Gaussian seeing.
+
+    :param x: Exponential scale divided by Gaussian sigma.
+    :param s: Distance from center of slit in sigma units.
+    :return: Signal profile along the slit.
+    &#34;&#34;&#34;
+    return np.exp(-2.0*(np.sinh(0.5 * asinh(x*s))/x)**2)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.init_snc_at_vis_ir_and_uvb"><code class="name flex">
+<span>def <span class="ident">init_snc_at_vis_ir_and_uvb</span></span>(<span>type, slit_width, disk_scale, psf_fwhm, bin_w=0, bin_l=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decides which data to read give the type</p>
+<p>:param type: Which part of the spectrum is used
+:param slit_width: The width of the slit in arcsec
+:param disk_scale: The exponential scale of the disk in arcsec
+:param psf_fwhm: The FWHM of the Gaussian PSF in arcsec</p>
+<p>No output. It just reads data into the globals.
+Also depending on :param type: it will read different
+constants into the globals.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_snc_at_vis_ir_and_uvb (type, slit_width, disk_scale, psf_fwhm, bin_w=0, bin_l=0):
+    &#34;&#34;&#34;
+    Decides which data to read give the type
+
+    :param type: Which part of the spectrum is used
+    :param slit_width: The width of the slit in arcsec
+    :param disk_scale: The exponential scale of the disk in arcsec
+    :param psf_fwhm: The FWHM of the Gaussian PSF in arcsec
+
+    No output. It just reads data into the globals.
+    Also depending on :param type: it will read different
+    constants into the globals.
+    &#34;&#34;&#34;
+    if type == &#39;vis&#39;:
+        # read night sky emission data
+        read_vis_sky()
+        # read QE data for the VIS arm of NTE into
+        read_vis_qe()
+    elif type == &#39;ir&#39;:
+        # read OH data
+        read_oh()
+        # read QE data for the IR arm of NTE
+        read_ir_qe()
+    elif type == &#39;uvb&#39;:
+        # read night sky emission data
+        read_uvb_sky()
+        # read QE data for the UV arm of NTE into
+        read_uvb_qe()
+
+    # read atmospheric absorption data
+    read_nir_abs()
+    # read atmospheric extinction data
+    read_uvis_ext()
+    # read atmospheric extinction data
+    read_luvb_ext()
+    
+    # copy parameters into the common block
+    global s_width, s_eff, psf_sig, h_s, pix_length, pix_width, \
+        pix_ron, pix_dark, ff_error, tel_area
+    s_width = slit_width    # slit width in arcsec
+    s_eff = erf(np.sqrt(np.log(2.0)) * slit_width / psf_fwhm)   # flux fraction passing slit
+    psf_sig = psf_fwhm/np.sqrt(8.0*np.log(2.0)) # Sigma of Gaussian PSF in arcsec
+    h_s = disk_scale/psf_sig    # disk scale of galaxy to PSF sigma
+    if type == &#39;vis&#39;:
+        pix_length = pix_length_vis   # pixel length in arcsec 
+        pix_width = pix_width_vis    # pixel width in arcsec 
+        pix_ron = ron_vis   # readout noise in electrons/pixel 
+        pix_dark = dark_vis    # dark current in electrons/pixel/s 
+    elif type == &#39;uvb&#39;:
+        pix_length = pix_length_uvb   # pixel length in arcsec 
+        pix_width = pix_width_uvb    # pixel width in arcsec 
+        pix_ron = ron_uvb   # readout noise in electrons/pixel 
+        pix_dark = dark_uvb    # dark current in electrons/pixel/s 
+    elif type == &#39;ir&#39;:
+        pix_length = pix_length_ir   # pixel length in arcsec 
+        pix_width  = pix_width_ir   # pixel width in arcsec 
+        pix_ron = ron_ir   # readout noise in electrons/pixel 
+        pix_dark = dark_ir     # dark current in electrons/pixel/s 
+
+    ff_error = 0.001    # flat field error as a fraction
+    tel_area = 4.79833  # telescope area in m^2</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.lamgen_at_vis_ir_and_uvb"><code class="name flex">
+<span>def <span class="ident">lamgen_at_vis_ir_and_uvb</span></span>(<span>type, lambda_min, lambda_max)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates an array of wavelengths.</p>
+<p>:param type: Which part of the spectrum is used
+:param lambda_min: The minimum wavelength in um
+:param lambda_max: The maximum wavelength in um
+:return: An array of wavelengths in um.
+Wavelength array is on a logarithmix scale.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lamgen_at_vis_ir_and_uvb (type, lambda_min, lambda_max):
+    &#34;&#34;&#34;
+    Generates an array of wavelengths.
+
+    :param type: Which part of the spectrum is used
+    :param lambda_min: The minimum wavelength in um
+    :param lambda_max: The maximum wavelength in um
+    :return: An array of wavelengths in um.
+             Wavelength array is on a logarithmix scale.
+    &#34;&#34;&#34;
+    # the middle wavelength on a logarithmic scale
+    lambda0 = np.sqrt(lambda_min * lambda_max)
+    # size of a pixel in wavelength units at lambda0
+    dlambda0 = pix_width / disp_at_vis_ir_and_uvb(type, lambda0)
+    x_min = min(lambda_min, lambda_max)
+    x_max = max(lambda_min, lambda_max)
+    ratio = x_max/x_min
+    # number of wavelength points in output array
+    N = np.round(lambda0 * np.log(ratio)/dlambda0) + 2
+    # float array in interval [0.0, 1.0]
+    x = np.arange(N, dtype=float)/(N - 1)
+    x = x_min * ratio**x
+    return x</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.make_moon_interpolation_func"><code class="name flex">
+<span>def <span class="ident">make_moon_interpolation_func</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes the function for interpolation of the moon spectrum.</p>
+<p>No input and no output.
+Makes the function for the moon interpolation to a global</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_moon_interpolation_func():
+    &#34;&#34;&#34;
+    Makes the function for interpolation of the moon spectrum.
+
+    No input and no output.
+    Makes the function for the moon interpolation to a global
+    &#34;&#34;&#34;
+    component_data = np.loadtxt(sky_component_filename)
+    wl = component_data[:, 0] / 1000
+    moon = component_data[:, 1]
+    global moon_interpolation
+    moon_interpolation = interp1d(wl, moon, kind=&#39;slinear&#39;)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.objem_at_all"><code class="name flex">
+<span>def <span class="ident">objem_at_all</span></span>(<span>func, abmag, maglam, param, sigma, lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the specific photon flux from a selected
+spectral law or template at a given wavelength with
+given spectral resolution, as specified by a
+Gaussian sigma.</p>
+<p>:param func: String. The spectral law or template to use.
+:param abmag: AB magnitude at specified wavelength
+:param maglam: Wavelength (in um) where abmag is given.
+:param param: Spectral index, temperature or bandwidth.
+:param sigma: The sky spectrum, as transmitted through
+the atmosphere, is convolved with a
+Gaussian having the dispersion sigma[i]
+at lambda[i]. The sigmas are given in um.
+:param lambd: The wavelengths given in um.
+:return: Specific photon flux at lambd given in
+units photons/s/m^2/um.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def objem_at_all (func, abmag, maglam, param, sigma, lambd):
+    &#34;&#34;&#34;
+    Calculates the specific photon flux from a selected
+    spectral law or template at a given wavelength with
+    given spectral resolution, as specified by a 
+    Gaussian sigma.
+
+    :param func: String. The spectral law or template to use.
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param param: Spectral index, temperature or bandwidth.
+    :param sigma: The sky spectrum, as transmitted through
+                  the atmosphere, is convolved with a 
+                  Gaussian having the dispersion sigma[i]
+                  at lambda[i]. The sigmas are given in um.
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    # convolve the object spectrum with a Gaussian
+    y = lambd.copy()
+    # number of points on each side of x0
+    N = 30
+    tmp_arange = np.arange(2*N + 1) - N
+    for i in range(len(lambd)):
+        # wavelength of sample point No. i
+        x0 = lambd[i]
+        # Gaussian sigma of sample point No. i
+        s0 = sigma[i]
+        # step size
+        step = 0.4 * s0
+        x = (tmp_arange)*step + x0
+        # photon fluxes of the transmitted objec spectrum at the discrete wavelengths
+        flux = step * atmos_trans(x)**am * call_func(func, abmag, maglam, param, x)
+        # calculate the Gaussian weighted sum of the transmitted object spectrum
+        y[i] = sum(flux * gauss((x - x0)/s0))/s0
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.planck"><code class="name flex">
+<span>def <span class="ident">planck</span></span>(<span>x, T)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the specific photon flux from
+a black body of themperature T kelvin.
+It is given in ph/s/m^2/um/arcsec^2</p>
+<p>:param x: The given wavelengths in um
+:param T: Temperature in kelvin
+:return: Specific photon flux at x</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def planck(x, T):
+    &#34;&#34;&#34;
+    Calculates the specific photon flux from
+    a black body of themperature T kelvin.
+    It is given in ph/s/m^2/um/arcsec^2
+
+    :param x: The given wavelengths in um
+    :param T: Temperature in kelvin
+    :return: Specific photon flux at x
+    &#34;&#34;&#34;
+    return 1.40929e16/(np.exp(1.43879e4/(T*x)) - 1)/x**4</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.plancklaw"><code class="name flex">
+<span>def <span class="ident">plancklaw</span></span>(<span>abmag, maglam, T, lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates a Planck-law continuum with temperature T,
+and an AB magnitude, abmag, at maglam.
+The photon flux density is given in ph/s/m^2/um.</p>
+<p>:param abmag: AB magnitude at specified wavelength
+:param maglam: Wavelength (in um) where abmag is given.
+:param T: Temperature in kelvin
+:param lambd: The wavelengths given in um.
+:return: Specific photon flux at lambd given in
+units photons/s/m^2/um.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plancklaw (abmag, maglam, T, lambd):
+    &#34;&#34;&#34;
+    Calculates a Planck-law continuum with temperature T,
+    and an AB magnitude, abmag, at maglam.
+    The photon flux density is given in ph/s/m^2/um.
+
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param T: Temperature in kelvin
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    c2 = 14387.9
+    a = 0.5*c2/T
+    y = np.exp(a/maglam - a/lambd)*np.sinh(a/maglam)/np.sinh(a/lambd)* \
+        (maglam/lambd)**4 * 10**(0.4*(mag_zero_point - abmag))/maglam
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.powerlaw"><code class="name flex">
+<span>def <span class="ident">powerlaw</span></span>(<span>abmag, maglam, alpha, lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates a power-law continuum with a spectral
+index, alpha and an AB magnitude, abmag, at maglam.
+The photon flux density is given in photons/s/m^2/um.</p>
+<p>:param abmag: AB magnitude at specified wavelength
+:param maglam: Wavelength (in um) where abmag is given.
+:param alpha: Spectral index (F_nu ~ 1/nu^alpha).
+:param lambd: The wavelengths given in um.
+:return: Specific photon flux at lambd given in
+units photons/s/m^2/um.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def powerlaw (abmag, maglam, alpha, lambd):
+    &#34;&#34;&#34;
+    Calculates a power-law continuum with a spectral
+    index, alpha and an AB magnitude, abmag, at maglam.
+    The photon flux density is given in photons/s/m^2/um.
+
+    :param abmag: AB magnitude at specified wavelength
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param alpha: Spectral index (F_nu ~ 1/nu^alpha).
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    y = (lambd/maglam)**alpha * 10**(0.4*(mag_zero_point - abmag))/lambd
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.qes_and_intps"><code class="name flex">
+<span>def <span class="ident">qes_and_intps</span></span>(<span>name, lambd, t)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Collective function for evaluation the interpolation.</p>
+<p>:param name: What part of the spectrum is used.
+:param lambd: The given wavelength range in um.
+:param t: The type of interpolation. (Needed because
+additional processing might be needed for
+specific interpolations)
+:return: The interpolated values at lambd.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def qes_and_intps (name, lambd, t):
+    &#34;&#34;&#34;
+    Collective function for evaluation the interpolation.
+
+    :param name: What part of the spectrum is used.
+    :param lambd: The given wavelength range in um.
+    :param t: The type of interpolation. (Needed because 
+              additional processing might be needed for
+              specific interpolations)
+    :return: The interpolated values at lambd.
+    &#34;&#34;&#34;
+    x_name = globals()[name + &#39;_x&#39;]
+    y_name = globals()[&#39;y_spl_&#39; + name]
+    x = np.clip(lambd, x_name[0], x_name[-1])
+    y = y_name(x)
+    if t == &#39;qe_at_ir&#39; or t == &#39;qe_at_vis&#39; or t == &#39;qe_at_uvb&#39;:
+        y = pessimism_factor * y
+    elif t == &#39;trans_at_nir&#39;:
+        y = y.clip(min=0.0)
+    elif t == &#39;trans_at_uvis&#39; or t == &#39;intp_vis_sky&#39; or t == &#39;intp_uvb_sky&#39; or t == &#39;trans_at_luvb&#39;:
+        y = y
+    else:
+        print(&#39;MISTAKE: wrong type inserted in qes_and_intps&#39;)
+        exit()
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_ir_qe"><code class="name flex">
+<span>def <span class="ident">read_ir_qe</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads efficiency of NTE in IR.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- ir_x - wavelengths in um
+- ir_y - efficiency</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_ir_qe ():
+    &#34;&#34;&#34;
+    Reads efficiency of NTE in IR.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - ir_x - wavelengths in um
+    - ir_y - efficiency
+    &#34;&#34;&#34;
+    global ir_x, ir_y, ir_y2
+    qe_data = np.loadtxt(&#39;data/efficiency/h2rg_eff.csv&#39;, delimiter=&#39;,&#39;)
+    # extract wavelength (in um) and QE of IR arm of NTE.
+    ir_x = qe_data[:,0]
+    ir_y = qe_data[:,-1]
+    # the QE must be in the range [0,1].
+    ir_y = ir_y.clip(min=1.0e-6, max=1.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_luvb_ext"><code class="name flex">
+<span>def <span class="ident">read_luvb_ext</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads uvb extinction data.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- luvb_x - wavelengths in um
+- luvb_y - extinction</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_luvb_ext ():
+    &#34;&#34;&#34;
+    Reads uvb extinction data.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - luvb_x - wavelengths in um
+    - luvb_y - extinction
+    &#34;&#34;&#34;
+    global luvb_x, luvb_y
+    luvb_data = np.loadtxt(&#39;data/UVIS-ext.dat&#39;)
+    # extract wavelength (in um) and transmission of the atmosphere.
+    luvb_x = luvb_data[:,0]/1000
+    luvb_y = 10.0**(-0.4 * luvb_data[:,1])</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_nir_abs"><code class="name flex">
+<span>def <span class="ident">read_nir_abs</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads data on atmospheric NIR absorption.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- nir_x - wavelengths in um
+- nir_y - transmission</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_nir_abs ():
+    &#34;&#34;&#34;
+    Reads data on atmospheric NIR absorption.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - nir_x - wavelengths in um
+    - nir_y - transmission
+    &#34;&#34;&#34;
+    global nir_x, nir_y
+    abs_data = np.loadtxt(&#39;data/skycalc_abs.dat&#39;)
+    # extract wavelengths (in um) and transmissions.
+    nir_x = abs_data[:,0] /1000.0 # in um
+    nir_y = abs_data[:,1]
+    # the transmission must be in the range [0,1].
+    nir_y = nir_y.clip(min=1.0e-6, max=1.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_oh"><code class="name flex">
+<span>def <span class="ident">read_oh</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads data on OH lines.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- oh_x - wavelengths in um
+- oh_y - line strengths in ph/m^2/s/arcsec^2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_oh ():
+    &#34;&#34;&#34;
+    Reads data on OH lines.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - oh_x - wavelengths in um
+    - oh_y - line strengths in ph/m^2/s/arcsec^2
+    &#34;&#34;&#34;
+    global oh_x, oh_y
+    oh_data = np.loadtxt(&#39;data/OH-lines.dat&#39;)
+    # convert wavelengths to um.
+    oh_x = oh_data[:,0]/10000.0
+    # convert wavelengths from vacuum to air
+    oh_x = oh_x / ((255.4/(41 - (1/oh_x)**2) + 29498.1/(146 - (1/oh_x)**2) + 64.328)*1e-6 + 1)
+    # save calibrated photon fluxes (in ph/m^2/s/arcsec^2). the calibration is done by using ESO&#39;s ETC.
+    oh_y = oh_data[:,1]/38.4
+    # the fluxes must be non-negative.
+    oh_y = oh_y.clip(min=0.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_template"><code class="name flex">
+<span>def <span class="ident">read_template</span></span>(<span>abmag, maglam, bandwidth, name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads data from the template spectrum file.
+The file must contain wavelengths in å.
+Calculates a template spectrum with an AB magnitude
+abmag at central wavelength maglam through a photometric
+system with a FWHM bandpass of bandwidth.
+Makes a spline interpolation of the template spectrum,
+with wavelengths in um, and the photon flux
+density in photons/s/m^2/um.</p>
+<p>:param abmag: AB magnitude in specified photometric system.
+:param maglam: Central wavelength (in um) of the bandpass.
+:param bandwidth: FWHM (in um) of the photometrix system.
+:param name: Name of the template spectrum file.
+No output.
+It puts the data in the global variables:
+- template_x - wavelengths in um
+- template_y - flux per wavelength in arbitrary units
+- y_spl_template - spline interpolation of template_y</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_template (abmag, maglam, bandwidth, name):
+    &#34;&#34;&#34;
+    Reads data from the template spectrum file.
+    The file must contain wavelengths in å.
+    Calculates a template spectrum with an AB magnitude
+    abmag at central wavelength maglam through a photometric
+    system with a FWHM bandpass of bandwidth.
+    Makes a spline interpolation of the template spectrum,
+    with wavelengths in um, and the photon flux
+    density in photons/s/m^2/um.
+
+    :param abmag: AB magnitude in specified photometric system.
+    :param maglam: Central wavelength (in um) of the bandpass.
+    :param bandwidth: FWHM (in um) of the photometrix system.
+    :param name: Name of the template spectrum file.
+    No output.
+    It puts the data in the global variables:
+    - template_x - wavelengths in um
+    - template_y - flux per wavelength in arbitrary units
+    - y_spl_template - spline interpolation of template_y
+    &#34;&#34;&#34;
+    global template_x, template_y, y_spl_template
+    template_data = np.loadtxt(&#39;data/&#39;+str(name))
+    # Wavelength in um
+    template_x = template_data[:,0] / 10000
+    # Spectral flux in arbitrary units per wavelengthinterval
+    template_y = template_data[:,1]
+    # Flux density must be non negative
+    template_y = template_y.clip(min=1.0E-30)
+    #The sampling must be sorted according to increasing wavelength
+    k = np.argsort(template_x)
+    template_x = template_x[k]
+    template_y = template_y[k]
+
+    n = len(template_x)
+    x = template_x
+    y = template_y
+    # the bandpass must not be wider than half the spectral range
+    fwhm = min(bandwidth, (0.5*(x[-1] - x[0])))
+    # the central wavelength must not be too close to the endpoints
+    xc = min(max(maglam, (x[0] + fwhm)), (x[-1] - fwhm))
+    # select all spectral samples within [xc - fwhm, xc + fwhm]
+    k = (x &gt;= (xc - fwhm)) &amp; (x &lt;= (xc + fwhm))
+    # what should we do if there are no samples in this interval?
+    if sum(k) == 0:
+        fwhm = 0.5*(x[-1] - x[0])
+        xc = 0.5*(x[-1] + x[0])
+        k = np.arange(n)
+    # calculate the bandpass profile
+    P = np.exp(-np.log(2.0) * (2.0 * (x[k] - xc)/fwhm)**4)
+    # calculate the scaling factor
+    S = 10.0**(0.4 * (mag_zero_point - abmag)) * sum(P/x[k])/sum(P * x[k] * y[k])
+    # calculate the photon flux (photons/s/m^2/um) at the sample points
+    y = S * x * y
+    # we should not extrapolate outside endpoints, instead we use the values at the endpoints.
+    y_spl_template = UnivariateSpline(x, y, s=0, k=2)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_uvb_qe"><code class="name flex">
+<span>def <span class="ident">read_uvb_qe</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads NTE efficiency in uvb range.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- uvb_x - wavelengths in um
+- uvb_y - efficiency</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_uvb_qe ():
+    &#34;&#34;&#34;
+    Reads NTE efficiency in uvb range.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - uvb_x - wavelengths in um
+    - uvb_y - efficiency
+    &#34;&#34;&#34;
+    global uvb_x, uvb_y
+    qe_data = np.loadtxt(&#39;data/efficiency/em_eff.csv&#39;, delimiter=&#39;,&#39;)
+    # extract wavelength (in um) and QE of UVB arm of NTE
+    uvb_x = qe_data[:,0]
+    uvb_y = qe_data[:,-1] 
+    # the QE must be in the range [0,1].
+    uvb_y = uvb_y.clip(min=1.0e-6, max=1.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_uvb_sky"><code class="name flex">
+<span>def <span class="ident">read_uvb_sky</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads data on uvb night-sky emissions.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- uvbsky_x - wavelengths in um
+- uvbsky_y - photon fluxes in ph/m^2/s/um/arcsec^2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_uvb_sky ():
+    &#34;&#34;&#34;
+    Reads data on uvb night-sky emissions.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - uvbsky_x - wavelengths in um
+    - uvbsky_y - photon fluxes in ph/m^2/s/um/arcsec^2
+    &#34;&#34;&#34;
+    global uvbsky_x, uvbsky_y
+    sky_data = np.loadtxt(sky_filename)
+    # extract wavelength in um
+    uvbsky_x = sky_data[:,0] /1000.0
+    # and photon fluxes in photons/m^2/s/um/arcsec^2
+    uvbsky_y = sky_data[:,1]
+    # the flux must be non negative
+    uvbsky_y = uvbsky_y.clip(min=0.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_uvis_ext"><code class="name flex">
+<span>def <span class="ident">read_uvis_ext</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads data on atmospheric UV/Vis extinction.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- uvis_x - wavelengths in um
+- uvis_y - transmissions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_uvis_ext ():
+    &#34;&#34;&#34;
+    Reads data on atmospheric UV/Vis extinction.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - uvis_x - wavelengths in um
+    - uvis_y - transmissions
+    &#34;&#34;&#34;
+    global uvis_x, uvis_y
+    ext_data = np.loadtxt(&#39;data/UVIS-ext.dat&#39;)
+    # extract wavelength (in um) and transmission of the atmosphere.
+    uvis_x = ext_data[:,0] /1000.0
+    uvis_y =  10.0**(-0.4 * ext_data[:,1])</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_vis_qe"><code class="name flex">
+<span>def <span class="ident">read_vis_qe</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads data on efficiency of NTE in VIS.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- vis_x - wavelengths in um
+- vis_y - efficiency</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_vis_qe ():
+    &#34;&#34;&#34;
+    Reads data on efficiency of NTE in VIS.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - vis_x - wavelengths in um
+    - vis_y - efficiency
+    &#34;&#34;&#34;
+    global vis_x, vis_y
+    qe_data = np.loadtxt(&#39;data/efficiency/skipper_eff.csv&#39;, delimiter=&#39;,&#39;)
+    # extract wavelength (in um) and QE of VIS arm of NTE.
+    vis_x = qe_data[:,0]
+    vis_y = qe_data[:,-1]
+    # the QE must be in the range [0,1].
+    vis_y = vis_y.clip(min=1.0e-6, max=1.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.read_vis_sky"><code class="name flex">
+<span>def <span class="ident">read_vis_sky</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function imports the needed data of the night-sky
+in the visual part of the spectrum.</p>
+<p>No input and no output.
+It puts the data in the global variables:
+- vissky_x - wavelengths in um
+- vissky_y - specific photon flux in photons/s/m^2/um</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_vis_sky ():
+    &#34;&#34;&#34;
+    This function imports the needed data of the night-sky
+    in the visual part of the spectrum.
+
+    No input and no output.
+    It puts the data in the global variables:
+    - vissky_x - wavelengths in um
+    - vissky_y - specific photon flux in photons/s/m^2/um
+    &#34;&#34;&#34;
+    global vissky_x, vissky_y
+    sky_data = np.loadtxt(sky_filename)
+    # extract wavelengths into um
+    vissky_x = sky_data[:,0] /1000.0
+    # and photon fluxes in photons/m^2/s/um/arcsec^2
+    vissky_y = sky_data[:,1]
+    # the flux must be non negative
+    vissky_y = vissky_y.clip(min=0.0)</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.s2n"><code class="name flex">
+<span>def <span class="ident">s2n</span></span>(<span>ron, fe, dark, h_s, sig, flux, sky, x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the S/N per pixel of a profile fit along the slit.</p>
+<p>:param ron: Readout noise in electrons per pixel.
+:param fe: Fractional flat-field error.
+:param dark: Dark current in electrons per pixel.
+:param h_s: <exp scale length> / <Gaussian sigma>
+:param sig: Sigma of the Gaussian seeing core in pixels.
+:param flux: Flux in electrons per exposure time.
+:param sky: Sky flux in electrons per pixel per exp time.
+:return: S/N per pixel along dispersion direction.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def s2n (ron, fe, dark, h_s, sig, flux, sky, x):
+    &#34;&#34;&#34;
+    Calculates the S/N per pixel of a profile fit along the slit.
+
+    :param ron: Readout noise in electrons per pixel.
+    :param fe: Fractional flat-field error.
+    :param dark: Dark current in electrons per pixel.
+    :param h_s: &lt;exp scale length&gt; / &lt;Gaussian sigma&gt;
+    :param sig: Sigma of the Gaussian seeing core in pixels.
+    :param flux: Flux in electrons per exposure time.
+    :param sky: Sky flux in electrons per pixel per exp time.
+    :return: S/N per pixel along dispersion direction.
+    &#34;&#34;&#34;
+    # calculate the object profile
+    P = hgauss(h_s, x/sig)
+    # normalize the profile sum to 1.0
+    P = P/sum(P)
+    # calculate the background variance per pixel
+    bg = sky + dark + ron**2 + (fe * sky)**2
+    # calculate the weight per pixel along the slit
+    W = 1/(flux * P + bg)
+    # shift the profile such that total(W*Q) = 0
+    Q = P - sum(W*P)/sum(W)
+    # calculate the signal-to-noise per pixel
+    y = flux * np.sqrt(sum(W*Q**2))
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.skycont_at_ir"><code class="name flex">
+<span>def <span class="ident">skycont_at_ir</span></span>(<span>lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the near infrafred continuum between the
+OH lines, as defined by values in J at 1.25 um
+and in H at 1.67 um. A linear interpolation in
+ln(photon_flux) - ln(lambda) is done.
+The photon flux is given in ph/s/m^2/um/arcsec^2.</p>
+<p>:param lambd: The given wavelengths in um
+:return: Specific photon flux at lambda.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def skycont_at_ir (lambd):
+    &#34;&#34;&#34;
+    Calculates the near infrafred continuum between the
+    OH lines, as defined by values in J at 1.25 um
+    and in H at 1.67 um. A linear interpolation in 
+    ln(photon_flux) - ln(lambda) is done.
+    The photon flux is given in ph/s/m^2/um/arcsec^2.
+
+    :param lambd: The given wavelengths in um
+    :return: Specific photon flux at lambda.
+    &#34;&#34;&#34;
+    lamb_J = 1.25
+    flux_J = 310.0
+    lamb_H = 1.665
+    flux_H = 590.0
+    x = lambd
+    HoJ = np.log(lamb_H/lamb_J)
+    exp_J = np.log(lamb_H/x)/HoJ
+    exp_H = np.log(x/lamb_J)/HoJ
+    y = flux_J**exp_J * flux_H**exp_H
+    if moon_stage != &#39;none&#39;:
+        y += moon_interpolation(x)
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.skyem_at_vis_ir_and_uvb"><code class="name flex">
+<span>def <span class="ident">skyem_at_vis_ir_and_uvb</span></span>(<span>type, sigma, lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the specific photon flux from the night
+sky at a given wavelength in the VIS/IR/UVB region
+with given spectral resolution, as specified by a
+Gaussian sigma.</p>
+<p>:param type: String that determines if VIS/IR/UVB is used
+:param sigma: The sky spectrum, as transmitted
+through the dispersion sigma[i]
+at lambda[i].
+The sigmas are given in um.
+:param lambd: The wavelengths given in um.
+:return: Specific photon flux at lambd
+given in units of photons/m^2/s/um/arcsec^2.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def skyem_at_vis_ir_and_uvb (type, sigma, lambd):
+    &#34;&#34;&#34;
+    Calculates the specific photon flux from the night
+    sky at a given wavelength in the VIS/IR/UVB region
+    with given spectral resolution, as specified by a
+    Gaussian sigma.
+
+    :param type: String that determines if VIS/IR/UVB is used
+    :param sigma: The sky spectrum, as transmitted
+                  through the dispersion sigma[i] 
+                  at lambda[i].
+                  The sigmas are given in um.
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd
+             given in units of photons/m^2/s/um/arcsec^2.
+    &#34;&#34;&#34;
+    if type == &#39;vis&#39;:
+        # step size
+        step = 0.0000030
+    elif type == &#39;ir&#39;:
+        # photon fluxes of the transmitted OH lines
+        oh_flux = qes_and_intps(&#39;nir&#39;, oh_x, &#39;trans_at_nir&#39;)**am * oh_y
+    elif type == &#39;uvb&#39;:
+        step = 0.0000025
+    y = lambd.copy()
+    # convolve the sky spectrum with a Gaussian
+    for i in range(len(lambd)):
+        # wavelength of sample point No. i
+        x0 = lambd[i]
+        # Gaussian sigma of sample point No. i
+        s0 = sigma[i]
+        if type == &#39;vis&#39; or type == &#39;uvb&#39;:
+            # number of points on each side of x0
+            N = np.round(12.0*s0/step)
+        elif type == &#39;ir&#39;:
+            # number of points on each side of x0
+            N = 30
+            # step size
+            step = 0.4 * s0
+        # range [-12*s0, +12*s0] of wavelengths around the point x0
+        x = (np.arange(2*N + 1) - N)*step + x0
+        if type == &#39;vis&#39;:
+            # photon fluxes of the transmitted spectrum at the discrete wavelengths
+            flux = step * qes_and_intps(&#39;uvis&#39;, x, &#39;trans_at_uvis&#39;)**am * qes_and_intps(&#39;vissky&#39;, x, &#39;intp_vis_sky&#39;)
+        elif type == &#39;ir&#39;:
+            # photon fluxes of the transmitted continuum at the discrete wavelengths
+            flux = step * qes_and_intps(&#39;nir&#39;, x, &#39;trans_at_nir&#39;)**am * skycont_at_ir(x)
+        elif type == &#39;uvb&#39;:
+            # photon fluxes of the transmitted spectrum at the discrete wavelengths
+            flux = step * qes_and_intps(&#39;luvb&#39;, x, &#39;trans_at_luvb&#39;)**am * qes_and_intps(&#39;uvbsky&#39;, x, &#39;intp_uvb_sky&#39;)
+
+        # calculate the Gaussian weighted sum of the transmitted sky spectrum.
+        y[i] = sum(flux * gauss((x - x0)/s0))/s0
+        if type == &#39;ir&#39;:
+            # distances of the OH lines from the sample point x0, in units of the Gaussian sigma s0.
+            z = (oh_x - x0)/s0
+            # select the lines that deviates less than 12*sigma, and add the Gaussian weighted sum of the transmitted fluxes.
+            k = abs(z) &lt; 12.0
+            y[i] = y[i] + sum(oh_flux[k]*gauss(z[k]))/s0
+
+    if type == &#39;ir&#39;:
+        y = y + thermalem_at_ir(lambd)
+
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.snc_at_vis_ir_and_uvb"><code class="name flex">
+<span>def <span class="ident">snc_at_vis_ir_and_uvb</span></span>(<span>type, nexp, etime, func, abmag, maglam, param, lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the signal-to-noise (per pixel) for a range
+of given wavelengths for an arm.</p>
+<p>:param type: Which arm is wanted to use.
+:param nexp: Number of single exposures.
+:param etime: Exposure time in s.
+:param func: Which spectral law is wanted.
+:param abmag: AB magnitude at specified wavelength.
+:param maglam: Wavelength (in um) where abmag is given.
+:param param: Spectral index (alpha) or temperature.
+:param lambd: The given wavelengths in um.
+:return: The Signal-to-Noise per pixel.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def snc_at_vis_ir_and_uvb(type, nexp, etime, func, abmag, maglam, param, lambd):
+    &#34;&#34;&#34;
+    Calculates the signal-to-noise (per pixel) for a range
+    of given wavelengths for an arm.
+
+    :param type: Which arm is wanted to use.
+    :param nexp: Number of single exposures.
+    :param etime: Exposure time in s.
+    :param func: Which spectral law is wanted.
+    :param abmag: AB magnitude at specified wavelength.
+    :param maglam: Wavelength (in um) where abmag is given.
+    :param param: Spectral index (alpha) or temperature.
+    :param lambd: The given wavelengths in um.
+    :return: The Signal-to-Noise per pixel.
+    &#34;&#34;&#34;
+    # number of wavelength points
+    Npts = len(lambd)
+    # Gaussian sigmas in wavelength space corresponding to the given slit width
+    sigma = s_width * gauss(0.0) / disp_at_vis_ir_and_uvb(type, lambd)
+    # number of pixels along the slit
+    Npix = np.round(s_length / pix_length)
+    # wavelength interval corresponding to the size of a pixel
+    dlambda = pix_width / disp_at_vis_ir_and_uvb(type, lambd)
+    # QE at each of the wavelength points
+    if type == &#39;vis&#39;:
+        qe = qes_and_intps(type, lambd, &#39;qe_at_vis&#39;)
+    elif type == &#39;ir&#39;:
+        qe = qes_and_intps(type, lambd, &#39;qe_at_ir&#39;)
+    elif type == &#39;uvb&#39;:
+        qe = qes_and_intps(type, lambd, &#39;qe_at_uvb&#39;)
+    # sky emission in photoelectrons/m^2/s/arcsec^2
+    skyem = qe * dlambda * skyem_at_vis_ir_and_uvb(type, sigma, lambd)
+    # sky emission in photoelectrons/pixel/exposure
+    skyem = (tel_area * etime * pix_length * s_width) * skyem
+    # object flux in photons/m^2/s/um
+    objem = objem_at_all(func, abmag, maglam, param, sigma, lambd)
+    # object flux in photoelectrons/m^2/s
+    objem = qe * dlambda * objem
+    # object flux in photoelectrons/exposure
+    objem = (tel_area * etime * s_eff) * objem
+    # dark current in electrons/pixel/exposure
+    dark = pix_dark * etime
+    # sigma of the Gaussian seeing core in pixels along the slit.
+    sig_pix = psf_sig / pix_length
+    # calculate the S/N for each wavelength
+    y = np.zeros((Npts, 2))
+    # there are Npix pixels along the slit
+    x_s2n = np.arange(Npix, dtype=float)
+    # place the object profile at the center of the slit
+    x_s2n = x_s2n - (Npix - 1)/2
+    for i in range(Npts):
+        # let us first obtain the S/N for a single exposure
+        y[i,0] = s2n(pix_ron, ff_error, dark, h_s, sig_pix, objem[i], skyem[i], x_s2n)
+        # and then the S/N for the sum of nexp exposures
+        y[i,0] = np.sqrt(float(nexp)) * y[i,0]
+        # finally we simulate the sum of nexp exposures
+        y[i,1] = (1.0 + np.random.normal() / y[i,0]) * float(nexp) * objem[i]
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.template"><code class="name flex">
+<span>def <span class="ident">template</span></span>(<span>lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the photon flux at lamda from the
+interpolation done in read_template().
+All wavelength are given in um, and the photon flux
+density is given in photons/s/m^2/um.</p>
+<p>:param lambd: The wavelengths given in um.
+:return: Specific photon flux at lambd given in
+units photons/s/m^2/um.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def template (lambd):
+    &#34;&#34;&#34;
+    Calculates the photon flux at lamda from the 
+    interpolation done in read_template().
+    All wavelength are given in um, and the photon flux
+    density is given in photons/s/m^2/um.
+
+    :param lambd: The wavelengths given in um.
+    :return: Specific photon flux at lambd given in
+             units photons/s/m^2/um.
+    &#34;&#34;&#34;
+    x_new = lambd
+    f = y_spl_template(x_new)
+    return f</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.thermalem_at_ir"><code class="name flex">
+<span>def <span class="ident">thermalem_at_ir</span></span>(<span>lambd)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the near infrared thermal continuum.
+A tempertaure of T = 288K and an emissivity of
+emis = 0.25 are assumed. The photon flux is
+given in ph/s/m^2/um/arcsec^2.</p>
+<p>:param lambd: The given wavelenghts in um.
+:return: Specific photon flux at lambda.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def thermalem_at_ir (lambd):
+    &#34;&#34;&#34;
+    Calculates the near infrared thermal continuum.
+    A tempertaure of T = 288K and an emissivity of
+    emis = 0.25 are assumed. The photon flux is
+    given in ph/s/m^2/um/arcsec^2.
+
+    :param lambd: The given wavelenghts in um.
+    :return: Specific photon flux at lambda.
+    &#34;&#34;&#34;
+    Temp = 288.0
+    emis = 0.25
+    x = lambd
+    y = (1 - (1 - emis) * qes_and_intps(&#39;nir&#39;, x, &#39;trans_at_nir&#39;)) * planck(Temp, x)
+    return y</code></pre>
+</details>
+</dd>
+<dt id="NTE_ETC.y_spls"><code class="name flex">
+<span>def <span class="ident">y_spls</span></span>(<span>type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This functions makes interpolations of the data needed for
+the given range.</p>
+<p>No input or output:
+It takes makes the interpolations as globals.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def y_spls (type):
+    &#34;&#34;&#34;
+    This functions makes interpolations of the data needed for
+    the given range.
+
+    No input or output:
+    It takes makes the interpolations as globals.
+    &#34;&#34;&#34;
+    global y_spl_vis, y_spl_nir, y_spl_uvis, y_spl_vissky, y_spl_ir, y_spl_uvb, y_spl_uvbsky, y_spl_luvb
+    if moon_stage != &#39;none&#39;:
+        make_moon_interpolation_func()
+    if type == &#39;vis&#39;:
+        y_spl_vis = UnivariateSpline(vis_x, vis_y, s=0, k=3)
+        y_spl_nir = UnivariateSpline(nir_x, nir_y, s=0, k=3)
+        y_spl_uvis = UnivariateSpline(uvis_x, uvis_y, s=0, k=3)
+        y_spl_luvb = UnivariateSpline(luvb_x, luvb_y, s=0, k=3)
+        y_spl_vissky = interp1d(vissky_x, vissky_y, kind=&#39;slinear&#39;)
+    elif type == &#39;ir&#39;:
+        y_spl_ir = UnivariateSpline(ir_x, ir_y, s=0, k=3)
+        y_spl_nir = UnivariateSpline(nir_x, nir_y, s=0, k=3)
+        y_spl_uvis = UnivariateSpline(uvis_x, uvis_y, s=0, k=3)
+        y_spl_luvb = UnivariateSpline(luvb_x, luvb_y, s=0, k=3)
+    elif type == &#39;uvb&#39;:
+        y_spl_uvb = UnivariateSpline(uvb_x, uvb_y, s=0, k=3)
+        y_spl_nir = UnivariateSpline(nir_x, nir_y, s=0, k=3)
+        y_spl_uvis = UnivariateSpline(uvis_x, uvis_y, s=0, k=3)
+        y_spl_luvb = UnivariateSpline(luvb_x, luvb_y, s=0, k=3)
+        y_spl_uvbsky = interp1d(uvbsky_x, uvbsky_y, kind=&#39;slinear&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="NTE_ETC.asinh" href="#NTE_ETC.asinh">asinh</a></code></li>
+<li><code><a title="NTE_ETC.atmos_trans" href="#NTE_ETC.atmos_trans">atmos_trans</a></code></li>
+<li><code><a title="NTE_ETC.call_func" href="#NTE_ETC.call_func">call_func</a></code></li>
+<li><code><a title="NTE_ETC.disp_at_vis_ir_and_uvb" href="#NTE_ETC.disp_at_vis_ir_and_uvb">disp_at_vis_ir_and_uvb</a></code></li>
+<li><code><a title="NTE_ETC.gauss" href="#NTE_ETC.gauss">gauss</a></code></li>
+<li><code><a title="NTE_ETC.hgauss" href="#NTE_ETC.hgauss">hgauss</a></code></li>
+<li><code><a title="NTE_ETC.init_snc_at_vis_ir_and_uvb" href="#NTE_ETC.init_snc_at_vis_ir_and_uvb">init_snc_at_vis_ir_and_uvb</a></code></li>
+<li><code><a title="NTE_ETC.lamgen_at_vis_ir_and_uvb" href="#NTE_ETC.lamgen_at_vis_ir_and_uvb">lamgen_at_vis_ir_and_uvb</a></code></li>
+<li><code><a title="NTE_ETC.make_moon_interpolation_func" href="#NTE_ETC.make_moon_interpolation_func">make_moon_interpolation_func</a></code></li>
+<li><code><a title="NTE_ETC.objem_at_all" href="#NTE_ETC.objem_at_all">objem_at_all</a></code></li>
+<li><code><a title="NTE_ETC.planck" href="#NTE_ETC.planck">planck</a></code></li>
+<li><code><a title="NTE_ETC.plancklaw" href="#NTE_ETC.plancklaw">plancklaw</a></code></li>
+<li><code><a title="NTE_ETC.powerlaw" href="#NTE_ETC.powerlaw">powerlaw</a></code></li>
+<li><code><a title="NTE_ETC.qes_and_intps" href="#NTE_ETC.qes_and_intps">qes_and_intps</a></code></li>
+<li><code><a title="NTE_ETC.read_ir_qe" href="#NTE_ETC.read_ir_qe">read_ir_qe</a></code></li>
+<li><code><a title="NTE_ETC.read_luvb_ext" href="#NTE_ETC.read_luvb_ext">read_luvb_ext</a></code></li>
+<li><code><a title="NTE_ETC.read_nir_abs" href="#NTE_ETC.read_nir_abs">read_nir_abs</a></code></li>
+<li><code><a title="NTE_ETC.read_oh" href="#NTE_ETC.read_oh">read_oh</a></code></li>
+<li><code><a title="NTE_ETC.read_template" href="#NTE_ETC.read_template">read_template</a></code></li>
+<li><code><a title="NTE_ETC.read_uvb_qe" href="#NTE_ETC.read_uvb_qe">read_uvb_qe</a></code></li>
+<li><code><a title="NTE_ETC.read_uvb_sky" href="#NTE_ETC.read_uvb_sky">read_uvb_sky</a></code></li>
+<li><code><a title="NTE_ETC.read_uvis_ext" href="#NTE_ETC.read_uvis_ext">read_uvis_ext</a></code></li>
+<li><code><a title="NTE_ETC.read_vis_qe" href="#NTE_ETC.read_vis_qe">read_vis_qe</a></code></li>
+<li><code><a title="NTE_ETC.read_vis_sky" href="#NTE_ETC.read_vis_sky">read_vis_sky</a></code></li>
+<li><code><a title="NTE_ETC.s2n" href="#NTE_ETC.s2n">s2n</a></code></li>
+<li><code><a title="NTE_ETC.skycont_at_ir" href="#NTE_ETC.skycont_at_ir">skycont_at_ir</a></code></li>
+<li><code><a title="NTE_ETC.skyem_at_vis_ir_and_uvb" href="#NTE_ETC.skyem_at_vis_ir_and_uvb">skyem_at_vis_ir_and_uvb</a></code></li>
+<li><code><a title="NTE_ETC.snc_at_vis_ir_and_uvb" href="#NTE_ETC.snc_at_vis_ir_and_uvb">snc_at_vis_ir_and_uvb</a></code></li>
+<li><code><a title="NTE_ETC.template" href="#NTE_ETC.template">template</a></code></li>
+<li><code><a title="NTE_ETC.thermalem_at_ir" href="#NTE_ETC.thermalem_at_ir">thermalem_at_ir</a></code></li>
+<li><code><a title="NTE_ETC.y_spls" href="#NTE_ETC.y_spls">y_spls</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
