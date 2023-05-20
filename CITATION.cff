@@ -1,0 +1,12 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Nymann-Lynggaard"
+  given-names: "Mads"
+- family-names: "Henneberg"
+  given-names: "Cecilie Valet"
+title: "Exposure Time Calculator for NTE"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2023-05-20
+url: "https://github.com/ceci8154/NTE_ETC"
